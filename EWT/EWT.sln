@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWT-UI", "EWT-UI\EWT-UI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWT-BLL", "EWT-BLL\EWT-BLL.csproj", "{B221B7B3-E43B-400B-809E-739976A99A38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWT-DAL", "EWT-DAL\EWT-DAL.csproj", "{18F8BF51-94D1-4B97-9A2B-E37D851C80BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B221B7B3-E43B-400B-809E-739976A99A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B221B7B3-E43B-400B-809E-739976A99A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B221B7B3-E43B-400B-809E-739976A99A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18F8BF51-94D1-4B97-9A2B-E37D851C80BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18F8BF51-94D1-4B97-9A2B-E37D851C80BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18F8BF51-94D1-4B97-9A2B-E37D851C80BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18F8BF51-94D1-4B97-9A2B-E37D851C80BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
