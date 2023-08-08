@@ -44,5 +44,11 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EWT-DAL\EWT-DAL.csproj">
+      <Project>{18f8bf51-94d1-4b97-9a2b-e37d851c80bf}</Project>
+      <Name>EWT-DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
