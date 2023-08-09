@@ -14,5 +14,12 @@ namespace EWT_UI.Controllers
 
             return View();
         }
+
+        public ActionResult Movies()
+        {
+            ViewBag.Title = "Movies Page";
+
+            return View();
+        }
     }
 }
