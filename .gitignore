@@ -32,3 +32,4 @@ obj/
 *.dbproj
 *.sln.docstates
 bin/
+.vs
