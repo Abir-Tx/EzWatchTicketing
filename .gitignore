@@ -31,4 +31,4 @@ obj/
 *.dbmdl
 *.dbproj
 *.sln.docstates
-
+bin/
