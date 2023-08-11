@@ -31,5 +31,9 @@ obj/
 *.dbmdl
 *.dbproj
 *.sln.docstates
-bin/
+bin/*
+bin/debug/
 .vs
+EWT/EWT-BLL/bin/
+EWT/EWT-DAL/bin/
+EWT/EWT-UI/bin/
