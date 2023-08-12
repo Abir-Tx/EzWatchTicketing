@@ -2,9 +2,6 @@
 using EWT_DAL.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EWT_DAL.Repos
 {
@@ -12,7 +9,8 @@ namespace EWT_DAL.Repos
     {
         public bool Create(Employee obj)
         {
-            throw new NotImplementedException();
+            db.Employees.Add(obj);
+            return db.SaveChanges() > 0;
         }
 
         public bool Delete(string id)
