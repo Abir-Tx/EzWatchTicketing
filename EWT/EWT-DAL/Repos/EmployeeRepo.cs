@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace EWT_DAL.Repos
 {
-    internal class EmployeeRepo : Repo, IRepo<Employee, string, bool>
+    internal class EmployeeRepo : Repo, IRepo<Employee, int, bool>
     {
         public bool Create(Employee obj)
         {
@@ -19,12 +19,17 @@ namespace EWT_DAL.Repos
             throw new NotImplementedException();
         }
 
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Employee> Get()
         {
           return db.Employees.ToList();
         }
 
-        public Employee Get(string id)
+        public Employee Get(int id)
         {
             throw new NotImplementedException();
         }

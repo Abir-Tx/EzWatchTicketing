@@ -23,5 +23,10 @@ namespace EWT_BLL.Services
             var convertedData = mapper.Map<List<EmployeeDTO>>(data);
             return convertedData;
         }
+
+        public static EmployeeDTO Get(int id)
+        {
+            return DataAccesser.EmployeeDataAccess().Get(id);
+        }
     }
 }

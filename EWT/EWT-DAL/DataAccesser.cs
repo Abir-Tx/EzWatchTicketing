@@ -11,7 +11,7 @@ namespace EWT_DAL
 {
     public class DataAccesser
     {
-        public static IRepo<Employee, string, bool> EmployeeDataAccess()
+        public static IRepo<Employee, int, bool> EmployeeDataAccess()
         {
             return new EmployeeRepo();
         }
