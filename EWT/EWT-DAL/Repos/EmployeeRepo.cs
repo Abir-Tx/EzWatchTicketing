@@ -31,7 +31,8 @@ namespace EWT_DAL.Repos
 
         public Employee Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Employees.Find(id);
+
         }
 
         public bool Update(Employee obj)
