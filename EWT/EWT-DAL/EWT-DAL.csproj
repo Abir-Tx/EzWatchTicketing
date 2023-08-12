@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccesser.cs" />
     <Compile Include="EF\EWTContext.cs" />
     <Compile Include="EF\Models\Employee.cs" />
     <Compile Include="EF\Models\User.cs" />
