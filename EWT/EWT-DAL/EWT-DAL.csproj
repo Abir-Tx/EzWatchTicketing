@@ -72,6 +72,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\EmployeeRepo.cs" />
+    <Compile Include="Repos\MovieRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
   </ItemGroup>
   <ItemGroup>
