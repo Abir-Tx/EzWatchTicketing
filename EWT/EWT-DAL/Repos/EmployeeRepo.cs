@@ -14,11 +14,6 @@ namespace EWT_DAL.Repos
             return db.SaveChanges() > 0;
         }
 
-        public bool Delete(string id)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Delete(int id)
         {
             throw new NotImplementedException();
