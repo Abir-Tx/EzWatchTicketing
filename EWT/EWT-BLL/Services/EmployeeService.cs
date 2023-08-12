@@ -24,9 +24,17 @@ namespace EWT_BLL.Services
             return convertedData;
         }
 
-        public static EmployeeDTO Get(int id)
-        {
-            return DataAccesser.EmployeeDataAccess().Get(id);
+        public static bool Create(EmployeeDTO employeeDTO)
+        { 
+        var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<EmployeeDTO, Employee>();
+            });
+            var mapper = new Mapper(config);
+
+            var employeeEntity = mapper.Map<Employee>(employeeDTO);
+            var createdEmployeeEntity = DataAccesser.EmployeeDataAccess().Create(employeeEntity);
+            return createdEmployeeEntity;
         }
     }
 }
