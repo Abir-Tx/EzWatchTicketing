@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace EWT_DAL.Repos
 {
-    internal class AdminRepo : Repo, IRepo<Admin, int, bool>
+    internal class TicketRepo : Repo, IRepo<Ticket, int, bool>
     {
-        public bool Create(Admin obj)
+        public bool Create(Ticket obj)
         {
-            db.Admins.Add(obj);
+            db.Tickets.Add(obj);
             return db.SaveChanges() > 0;
         }
 
         public bool Delete(int id)
         {
             var ex = Get(id);
-            db.Admins.Remove(ex);
+            db.Tickets.Remove(ex);
             return db.SaveChanges() > 0;
         }
 
-        public List<Admin> Get()
+        public List<Ticket> Get()
         {
-            return db.Admins.ToList(); 
+            return db.Tickets.ToList();
         }
 
-        public Admin Get(int id)
+        public Ticket Get(int id)
         {
-            return db.Admins.Find(id);
+            return db.Tickets.Find(id);
         }
 
-        public bool Update(Admin obj)
+        public bool Update(Ticket obj)
         {
             var ex = Get(obj.Id);
             db.Entry(ex).CurrentValues.SetValues(obj);

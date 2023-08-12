@@ -46,9 +46,11 @@
   <ItemGroup>
     <Compile Include="DTOs\AdminDTO.cs" />
     <Compile Include="DTOs\EmployeeDTO.cs" />
+    <Compile Include="DTOs\TicketDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\TicketService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EWT-DAL\EWT-DAL.csproj">
