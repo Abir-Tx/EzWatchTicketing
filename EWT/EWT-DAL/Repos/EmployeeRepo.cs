@@ -2,6 +2,7 @@
 using EWT_DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EWT_DAL.Repos
 {
@@ -20,7 +21,7 @@ namespace EWT_DAL.Repos
 
         public List<Employee> Get()
         {
-            throw new NotImplementedException();
+          return db.Employees.ToList();
         }
 
         public Employee Get(string id)
