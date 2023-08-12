@@ -55,6 +55,7 @@
     <Compile Include="EF\EWTContext.cs" />
     <Compile Include="EF\Models\Admin.cs" />
     <Compile Include="EF\Models\Employee.cs" />
+    <Compile Include="EF\Models\Movie.cs" />
     <Compile Include="EF\Models\Ticket.cs" />
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
@@ -66,6 +67,10 @@
     <Compile Include="Migrations\202308120806219_InitEmployee.designer.cs">
       <DependentUpon>202308120806219_InitEmployee.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Migrations\202308121638378_InitMovie.cs" />
+    <Compile Include="Migrations\202308121638378_InitMovie.designer.cs">
+      <DependentUpon>202308121638378_InitMovie.cs</DependentUpon>
     <Compile Include="Migrations\202308121919566_CreateTableAdmin.cs" />
     <Compile Include="Migrations\202308121919566_CreateTableAdmin.designer.cs">
       <DependentUpon>202308121919566_CreateTableAdmin.cs</DependentUpon>
@@ -82,6 +87,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\AdminRepo.cs" />
     <Compile Include="Repos\EmployeeRepo.cs" />
+    <Compile Include="Repos\MovieRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\TicketRepo.cs" />
   </ItemGroup>
@@ -96,6 +102,9 @@
     <EmbeddedResource Include="Migrations\202308120806219_InitEmployee.resx">
       <DependentUpon>202308120806219_InitEmployee.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="Migrations\202308121638378_InitMovie.resx">
+      <DependentUpon>202308121638378_InitMovie.cs</DependentUpon>
     <EmbeddedResource Include="Migrations\202308121919566_CreateTableAdmin.resx">
       <DependentUpon>202308121919566_CreateTableAdmin.cs</DependentUpon>
     </EmbeddedResource>
