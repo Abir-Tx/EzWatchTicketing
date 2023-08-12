@@ -57,5 +57,21 @@ namespace EWT_UI.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+
+        [HttpDelete]
+        [Route("api/employee/delete/{id}")]
+        public HttpResponseMessage Delete(int id)
+        {
+            if (EmployeeService.Delete(id)) return Request.CreateResponse(HttpStatusCode.OK, "The Employee with ID: " + id + " has been deleted successfully");
+            else return Request.CreateResponse(HttpStatusCode.BadRequest, "Cannot delete the requested Employee");
+        }
+
+        [HttpPut]
+        [Route("api/employee/update")]
+        public HttpResponseMessage Update(EmployeeDTO emp)
+        {
+            EmployeeService.Update(emp);
+            return Request.CreateResponse(HttpStatusCode.OK, "Employee ID: " + emp.Id + " has been updated successfully");
+        }
     }
 }
