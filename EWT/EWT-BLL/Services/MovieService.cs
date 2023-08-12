@@ -53,5 +53,28 @@ namespace EWT_BLL.Services
                 return DataAccesser.MovieDataAccess().Create(movieEntity);
             }
         }
+
+        public static bool Delete(int id)
+        {
+            return DataAccesser.MovieDataAccess().Delete(id);
+        }
+
+        public static bool Update(MovieDTO movie)
+        {
+            if (movie == null)
+            {
+                return false;
+            }
+            else
+            {
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<MovieDTO, Movie>();
+                });
+                var mapper = new Mapper(config);
+                var movieEntity = mapper.Map<Movie>(movie);
+                return DataAccesser.MovieDataAccess().Update(movieEntity);
+            }
+        }
     }
 }
