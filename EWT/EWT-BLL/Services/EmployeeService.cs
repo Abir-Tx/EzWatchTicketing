@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using EWT_BLL.DTOs;
 using EWT_DAL;
 using EWT_DAL.EF.Models;
@@ -19,6 +19,7 @@ namespace EWT_BLL.Services
             var convertedData = mapper.Map<List<EmployeeDTO>>(data);
             return convertedData;
         }
+
 
         public static EmployeeDTO Get(int id)
         {
