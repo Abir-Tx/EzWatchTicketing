@@ -12,6 +12,7 @@ namespace EWT_BLL.Services
 {
     public class MovieService
     {
+        // Get All Movies 
         public static List<MovieDTO> Get()
         {
             var data = DataAccesser.MovieDataAccess().Get();
@@ -24,6 +25,7 @@ namespace EWT_BLL.Services
             return convertedData;
         }
 
+        // Get a specific movie by ID
         public static MovieDTO Get(int id)
         {
             var data  = DataAccesser.MovieDataAccess().Get(id);
@@ -36,6 +38,7 @@ namespace EWT_BLL.Services
             return singleMovie;
         }
 
+        // Create a new movie or add a new movie to the database
         public static bool Create(MovieDTO movie)
         {
             if (movie == null)
@@ -54,11 +57,13 @@ namespace EWT_BLL.Services
             }
         }
 
+        // Delete a movie by id from the database
         public static bool Delete(int id)
         {
             return DataAccesser.MovieDataAccess().Delete(id);
         }
 
+        // Update a movie by id in the database
         public static bool Update(MovieDTO movie)
         {
             if (movie == null)
