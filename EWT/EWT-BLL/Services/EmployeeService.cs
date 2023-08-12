@@ -20,9 +20,22 @@ namespace EWT_BLL.Services
             return convertedData;
         }
 
+        public static EmployeeDTO Get(int id)
+        {
+            var data = DataAccesser.EmployeeDataAccess().Get(id);
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Employee, EmployeeDTO>();
+            });
+            var mapper = new Mapper(config);
+            var entity = mapper.Map<EmployeeDTO>(data);
+            return entity;
+        }
+
+
         public static bool Create(EmployeeDTO employeeDTO)
-        { 
-        var config = new MapperConfiguration(cfg =>
+        {
+            var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<EmployeeDTO, Employee>();
             });
@@ -33,16 +46,26 @@ namespace EWT_BLL.Services
             return createdEmployeeEntity;
         }
 
-        public static EmployeeDTO Get(int id)
+        public static bool Delete(int id)
         {
-            var data  = DataAccesser.EmployeeDataAccess().Get(id);
-            var config = new MapperConfiguration(cfg =>
+            var employee = DataAccesser.EmployeeDataAccess().Get(id);
+            if (employee == null) return false;
+           return DataAccesser.EmployeeDataAccess().Delete(id);
+        }
+
+        public static bool Update(EmployeeDTO employee)
+        {
+            if (employee == null) return false;
+            else
             {
-                cfg.CreateMap<Employee, EmployeeDTO>();
-            });
-            var mapper = new Mapper(config);
-            var entity = mapper.Map<EmployeeDTO>(data);
-            return entity;
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<EmployeeDTO, Employee>();
+                });
+                var mapper = new Mapper(config);
+                var empEntity = mapper.Map<Employee>(employee);
+                return DataAccesser.EmployeeDataAccess().Update(empEntity);
+            }
         }
     }
 }
