@@ -11,10 +11,7 @@ namespace EWT_DAL
 {
     public class DataAccesser
     {
-        public static IRepo<Employee, int, bool> EmployeeDataAccess()
-        {
-            return new EmployeeRepo();
-        }
+        public static IRepo<Employee, int, bool> EmployeeDataAccess() { return new EmployeeRepo(); }
 
         // Data Accessor for Movies
         public static IRepo<Movie, int, bool> MovieDataAccess() {  return new MovieRepo(); }
