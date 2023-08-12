@@ -51,11 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccesser.cs" />
     <Compile Include="EF\EWTContext.cs" />
     <Compile Include="EF\Models\Hall.cs" />
     <Compile Include="EF\Models\Payment.cs" />
     <Compile Include="EF\Models\Seat.cs" />
     <Compile Include="EF\Models\User.cs" />
+    <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202308112030579_InitDB.cs" />
     <Compile Include="Migrations\202308112030579_InitDB.designer.cs">
       <DependentUpon>202308112030579_InitDB.cs</DependentUpon>
@@ -70,6 +72,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\HallRepo.cs" />
+    <Compile Include="Repos\Repo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -86,10 +90,7 @@
       <DependentUpon>202308122150246_paymentAndSeatAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
