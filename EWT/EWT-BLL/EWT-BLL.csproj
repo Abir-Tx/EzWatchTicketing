@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\AdminDTO.cs" />
     <Compile Include="DTOs\EmployeeDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
   </ItemGroup>
   <ItemGroup>
