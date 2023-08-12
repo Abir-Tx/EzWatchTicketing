@@ -54,6 +54,7 @@
     <Compile Include="DataAccesser.cs" />
     <Compile Include="EF\EWTContext.cs" />
     <Compile Include="EF\Models\Employee.cs" />
+    <Compile Include="EF\Models\Movie.cs" />
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202308112030579_InitDB.cs" />
@@ -63,6 +64,10 @@
     <Compile Include="Migrations\202308120806219_InitEmployee.cs" />
     <Compile Include="Migrations\202308120806219_InitEmployee.designer.cs">
       <DependentUpon>202308120806219_InitEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308121638378_InitMovie.cs" />
+    <Compile Include="Migrations\202308121638378_InitMovie.designer.cs">
+      <DependentUpon>202308121638378_InitMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308120806219_InitEmployee.resx">
       <DependentUpon>202308120806219_InitEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308121638378_InitMovie.resx">
+      <DependentUpon>202308121638378_InitMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
