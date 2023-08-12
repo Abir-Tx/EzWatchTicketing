@@ -15,5 +15,8 @@ namespace EWT_DAL
         {
             return new EmployeeRepo();
         }
+
+        // Data Accessor for Movies
+        public static IRepo<Movie, int, bool> MovieDataAccess() {  return new MovieRepo(); }
     }
 }
