@@ -2,6 +2,7 @@
 using EWT_DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace EWT_DAL.Repos
@@ -34,7 +35,17 @@ namespace EWT_DAL.Repos
 
         public bool Update(Movie obj)
         {
-            throw new NotImplementedException();
+            var movie = db.Movies.Find(obj.Id);
+            if (movie == null) return false;
+            movie.Title = obj.Title; 
+            movie.ReleaseDate = obj.ReleaseDate;
+            movie.Genre = obj.Genre; 
+            movie.Duration = obj.Duration;
+            movie.Poster = obj.Poster;
+            movie.Description = obj.Description;
+
+            db.Movies.AddOrUpdate(movie);
+            return db.SaveChanges() > 0;
         }
     }
 }
