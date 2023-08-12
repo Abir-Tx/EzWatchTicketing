@@ -24,9 +24,9 @@ namespace EWT_BLL.Services
             return convertedData;
         }
 
-        public static EmployeeDTO Get(int id)
-        {
-            return DataAccesser.EmployeeDataAccess().Get(id);
-        }
+        //public static EmployeeDTO Get(int id)
+        //{
+        //    return DataAccesser.EmployeeDataAccess().Get(id);
+        //}
     }
 }

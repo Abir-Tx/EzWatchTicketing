@@ -15,5 +15,14 @@ namespace EWT_DAL
         {
             return new EmployeeRepo();
         }
+        public static IRepo<Admin, int, bool> AdminDataAccess()
+        {
+            return new AdminRepo();
+        }
+
+        public static IRepo<Ticket, int, bool> TicketDataAccess()
+        {
+            return new TicketRepo();
+        }
     }
 }
