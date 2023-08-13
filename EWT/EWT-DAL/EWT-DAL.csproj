@@ -64,6 +64,7 @@
     <Compile Include="EF\Models\Employee.cs" />
     <Compile Include="EF\Models\Movie.cs" />
     <Compile Include="EF\Models\Ticket.cs" />
+    <Compile Include="EF\Models\Token.cs" />
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202308112030579_InitDB.cs" />
