@@ -20,5 +20,6 @@ namespace EWT_DAL.EF.Models
         [ForeignKey("PayMethod")]
         public int payId { get; set; }
         public virtual PayMethod PayMethod{ get; set; }    
+        //userId Foreign key (add later)
     }
 }

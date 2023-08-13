@@ -12,7 +12,8 @@ namespace EWT_DAL.Repos
     {
         public bool Create(Payment obj)
         {
-            throw new NotImplementedException();
+            db.Payments.Add(obj);
+            return db.SaveChanges() > 0;
         }
 
         public bool Delete(int id)
@@ -22,7 +23,7 @@ namespace EWT_DAL.Repos
 
         public List<Payment> Get()
         {
-            throw new NotImplementedException();
+            return db.Payments.ToList();    
         }
 
         public Payment Get(int id)

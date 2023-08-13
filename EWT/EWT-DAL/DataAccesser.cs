@@ -16,6 +16,11 @@ namespace EWT_DAL
         {
             return new HallRepo();
         }
+        public static IRepo<Payment, int, bool>PaymentDataAccess()
+        {
+            return new PaymentRepo();
+        }
+
     }
 }
 
