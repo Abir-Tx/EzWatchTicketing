@@ -50,6 +50,7 @@
     <Compile Include="DTOs\PaymentDTO.cs" />
     <Compile Include="DTOs\PayMethodDTO.cs" />
     <Compile Include="DTOs\SeatDTO.cs" />
+    <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HallService.cs" />
     <Compile Include="Services\PaymentServices.cs" />
