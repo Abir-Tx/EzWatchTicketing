@@ -111,6 +111,7 @@
     <Compile Include="Repos\AdminRepo.cs" />
     <Compile Include="Repos\EmployeeRepo.cs" />
     <Compile Include="Repos\MovieRepo.cs" />
+    <Compile Include="Repos\TokenRepo.cs" />
     <Compile Include="Repos\UserRepo.cs" />
     <Compile Include="Repos\TicketRepo.cs" />
   </ItemGroup>
