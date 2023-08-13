@@ -3,18 +3,20 @@ using EWT_DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace EWT_DAL.Repos
 {
-    internal class EmployeeRepo : Repo, IRepo<Employee, int, bool>
-    { 
-        public bool Create(Employee obj)
+    internal class UserRepo : Repo, IRepo<User, int, bool>, IUserRepo
+    {
+        public bool Create(User obj)
         {
-            db.Employees.Add(obj);
+            db.Users.Add(obj);
             return db.SaveChanges() > 0;
         }
 
-        public bool Delete(string id)
+        public bool Delete(String id)
         {
             throw new NotImplementedException();
         }
@@ -24,20 +26,19 @@ namespace EWT_DAL.Repos
             throw new NotImplementedException();
         }
 
-        public List<Employee> Get()
+        public List<User> Get()
         {
-          return db.Employees.ToList();
+            return db.Users.ToList();
         }
 
-        public Employee Get(int id)
+        public User Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Employee obj)
+        public bool Update(User obj)
         {
             throw new NotImplementedException();
         }
-    
     }
 }

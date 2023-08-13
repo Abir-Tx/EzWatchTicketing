@@ -15,5 +15,10 @@ namespace EWT_DAL
         {
             return new EmployeeRepo();
         }
+
+        public static object UserDataAccess()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
