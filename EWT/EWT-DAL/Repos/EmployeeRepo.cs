@@ -2,6 +2,7 @@
 using EWT_DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace EWT_DAL.Repos
@@ -14,14 +15,15 @@ namespace EWT_DAL.Repos
             return db.SaveChanges() > 0;
         }
 
-        public bool Delete(string id)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var employeeToDelete = db.Employees.FirstOrDefault(emp => emp.Id == id);
+            if (employeeToDelete != null)
+            {
+                db.Employees.Remove(employeeToDelete);
+                return db.SaveChanges() > 0;
+            }
+            return false;
         }
 
         public List<Employee> Get()
@@ -31,12 +33,27 @@ namespace EWT_DAL.Repos
 
         public Employee Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Employees.Find(id);
+
         }
 
         public bool Update(Employee obj)
         {
-            throw new NotImplementedException();
+            var employeeToUpdate = db.Employees.Find(obj.Id);
+            if (employeeToUpdate == null)
+            {
+                return false;
+            }
+
+            employeeToUpdate.Id = obj.Id;
+            employeeToUpdate.Address = obj.Address;
+            employeeToUpdate.Username = obj.Username;
+            employeeToUpdate.Password = obj.Password;
+            employeeToUpdate.Salary = obj.Salary;
+            employeeToUpdate.Email = obj.Email;
+
+            db.Employees.AddOrUpdate(employeeToUpdate);
+            return db.SaveChanges() > 0;
         }
     
     }
