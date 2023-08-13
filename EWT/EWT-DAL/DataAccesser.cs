@@ -13,8 +13,6 @@ namespace EWT_DAL
 {
     public class DataAccesser
     {
-
-
         public static IRepo<Hall, int, bool> HallDataAceess()
         {
             return new HallRepo();

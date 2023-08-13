@@ -141,9 +141,9 @@
     <EmbeddedResource Include="Migrations\202308122150246_paymentAndSeatAdded.resx">
       <DependentUpon>202308122150246_paymentAndSeatAdded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308130029423_payment_method_added.resx">
-      <DependentUpon>202308130029423_payment_method_added.cs</DependentUpon>
-
+	  <EmbeddedResource Include="Migrations\202308130029423_payment_method_added.resx">
+		  <DependentUpon>202308130029423_payment_method_added.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308120806219_InitEmployee.resx">
       <DependentUpon>202308120806219_InitEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,7 +161,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308122041435_MergeNelow.resx">
       <DependentUpon>202308122041435_MergeNelow.cs</DependentUpon>
-
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
