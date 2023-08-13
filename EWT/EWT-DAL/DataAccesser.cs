@@ -19,6 +19,13 @@ namespace EWT_DAL
         {
             return new HallRepo();
         }
+
+
+        public static object UserDataAccess()
+        {
+            throw new NotImplementedException();
+        }
+
         public static IRepo<Payment, int, bool>PaymentDataAccess()
         {
             return new PaymentRepo();
@@ -36,6 +43,5 @@ namespace EWT_DAL
             return new TicketRepo();
 
         }
-
     }
 }

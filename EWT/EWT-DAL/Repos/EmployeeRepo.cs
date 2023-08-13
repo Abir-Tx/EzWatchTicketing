@@ -8,7 +8,7 @@ using System.Linq;
 namespace EWT_DAL.Repos
 {
     internal class EmployeeRepo : Repo, IRepo<Employee, int, bool>
-    {
+    { 
         public bool Create(Employee obj)
         {
             db.Employees.Add(obj);
@@ -55,5 +55,6 @@ namespace EWT_DAL.Repos
             db.Employees.AddOrUpdate(employeeToUpdate);
             return db.SaveChanges() > 0;
         }
+    
     }
 }
