@@ -33,6 +33,11 @@ namespace EWT_DAL.Repos
             return db.Halls.Find(id);
 
         }
+        public Hall GetSeatByHall(int id) 
+        {
+            return db.Halls.Find(id);
+        }
+     
 
         public bool Update(Hall obj)
         {

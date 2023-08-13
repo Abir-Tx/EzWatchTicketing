@@ -57,10 +57,28 @@ namespace EWT_BLL.Services
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Hall, HallDTO>();
+                cfg.CreateMap<Hall,HallSeatDTO>();
             });
             var mapper=new Mapper(config);  
             var convertedData=mapper.Map<HallDTO>(data);
+            
             return convertedData;
         }
+        //needs modification
+        public static HallSeatDTO GetSeatByHall(int id)
+        {
+            var data = DataAccesser.HallDataAceess().Get(id);
+            var config = new MapperConfiguration(cfg =>
+            {
+                
+                cfg.CreateMap<Hall, HallSeatDTO>();
+            });
+            var mapper = new Mapper(config);
+            var convertedData = mapper.Map<HallSeatDTO>(data);
+
+            return convertedData;
+        }
+
+     
     }
 }

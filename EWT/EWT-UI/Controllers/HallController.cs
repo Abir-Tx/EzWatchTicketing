@@ -82,6 +82,21 @@ namespace EWT_UI.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+        [HttpGet]
+        [Route("api/hall/{id}/seat")]
+        public HttpResponseMessage GetSeatbyHall(int id)
+        {
+            try
+            {
+                var data = HallService.Get(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
 
+
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
     }
 }

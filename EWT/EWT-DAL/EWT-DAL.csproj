@@ -55,6 +55,7 @@
     <Compile Include="EF\EWTContext.cs" />
     <Compile Include="EF\Models\Hall.cs" />
     <Compile Include="EF\Models\Payment.cs" />
+    <Compile Include="EF\Models\PayMethod.cs" />
     <Compile Include="EF\Models\Seat.cs" />
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
@@ -69,6 +70,10 @@
     <Compile Include="Migrations\202308122150246_paymentAndSeatAdded.cs" />
     <Compile Include="Migrations\202308122150246_paymentAndSeatAdded.designer.cs">
       <DependentUpon>202308122150246_paymentAndSeatAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308130029423_payment_method_added.cs" />
+    <Compile Include="Migrations\202308130029423_payment_method_added.designer.cs">
+      <DependentUpon>202308130029423_payment_method_added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308122150246_paymentAndSeatAdded.resx">
       <DependentUpon>202308122150246_paymentAndSeatAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308130029423_payment_method_added.resx">
+      <DependentUpon>202308130029423_payment_method_added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -11,6 +11,7 @@ namespace EWT_DAL.Interfaces
     {
         List<CLASS> Get();
         CLASS Get(ID id);
+        
         RET Create(CLASS obj);
         bool Delete(ID id);
         RET Update(CLASS obj);

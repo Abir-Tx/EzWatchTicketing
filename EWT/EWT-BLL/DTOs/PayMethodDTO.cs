@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace EWT_BLL.DTOs
 {
-    public class HallDTO
+    public class PayMethodDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Location { get; set; }
-
-      
-
-
-
+        //  public string Type { get; set; }
+       
+       
     }
+
 }
