@@ -53,16 +53,24 @@
   <ItemGroup>
     <Compile Include="DataAccesser.cs" />
     <Compile Include="EF\EWTContext.cs" />
+
     <Compile Include="EF\Models\Hall.cs" />
     <Compile Include="EF\Models\Payment.cs" />
     <Compile Include="EF\Models\PayMethod.cs" />
     <Compile Include="EF\Models\Seat.cs" />
+
+    <Compile Include="EF\Models\Admin.cs" />
+    <Compile Include="EF\Models\Employee.cs" />
+    <Compile Include="EF\Models\Movie.cs" />
+    <Compile Include="EF\Models\Ticket.cs" />
+
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202308112030579_InitDB.cs" />
     <Compile Include="Migrations\202308112030579_InitDB.designer.cs">
       <DependentUpon>202308112030579_InitDB.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Migrations\202308122110525_addHAll.cs" />
     <Compile Include="Migrations\202308122110525_addHAll.designer.cs">
       <DependentUpon>202308122110525_addHAll.cs</DependentUpon>
@@ -80,6 +88,39 @@
     <Compile Include="Repos\HallRepo.cs" />
     <Compile Include="Repos\PaymentRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
+
+    <Compile Include="Migrations\202308120806219_InitEmployee.cs" />
+    <Compile Include="Migrations\202308120806219_InitEmployee.designer.cs">
+      <DependentUpon>202308120806219_InitEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308121638378_InitMovie.cs" />
+    <Compile Include="Migrations\202308121638378_InitMovie.designer.cs">
+      <DependentUpon>202308121638378_InitMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308121919566_CreateTableAdmin.cs" />
+    <Compile Include="Migrations\202308121919566_CreateTableAdmin.designer.cs">
+      <DependentUpon>202308121919566_CreateTableAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308121925429_CreateTableAdminV2.cs" />
+    <Compile Include="Migrations\202308121925429_CreateTableAdminV2.designer.cs">
+      <DependentUpon>202308121925429_CreateTableAdminV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308121950396_CreateTableTickets.cs" />
+    <Compile Include="Migrations\202308121950396_CreateTableTickets.designer.cs">
+      <DependentUpon>202308121950396_CreateTableTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308122041435_MergeNelow.cs" />
+    <Compile Include="Migrations\202308122041435_MergeNelow.designer.cs">
+      <DependentUpon>202308122041435_MergeNelow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\AdminRepo.cs" />
+    <Compile Include="Repos\EmployeeRepo.cs" />
+    <Compile Include="Repos\MovieRepo.cs" />
+    <Compile Include="Repos\Repo.cs" />
+    <Compile Include="Repos\TicketRepo.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -89,6 +130,7 @@
     <EmbeddedResource Include="Migrations\202308112030579_InitDB.resx">
       <DependentUpon>202308112030579_InitDB.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Migrations\202308122110525_addHAll.resx">
       <DependentUpon>202308122110525_addHAll.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +139,25 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308130029423_payment_method_added.resx">
       <DependentUpon>202308130029423_payment_method_added.cs</DependentUpon>
+
+    <EmbeddedResource Include="Migrations\202308120806219_InitEmployee.resx">
+      <DependentUpon>202308120806219_InitEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308121638378_InitMovie.resx">
+      <DependentUpon>202308121638378_InitMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308121919566_CreateTableAdmin.resx">
+      <DependentUpon>202308121919566_CreateTableAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308121925429_CreateTableAdminV2.resx">
+      <DependentUpon>202308121925429_CreateTableAdminV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308121950396_CreateTableTickets.resx">
+      <DependentUpon>202308121950396_CreateTableTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308122041435_MergeNelow.resx">
+      <DependentUpon>202308122041435_MergeNelow.cs</DependentUpon>
+
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
