@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EWT_DAL.Repos
 {
-    internal class UserRepo : Repo, IRepo<User, int, bool>, IUserRepo
+    internal class UserRepo : Repo, IRepo<User, int, bool>
     {
         public bool Create(User obj)
         {

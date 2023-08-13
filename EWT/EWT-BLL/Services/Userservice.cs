@@ -17,12 +17,12 @@ namespace EWT_BLL.Services
         {
 
             var data = DataAccesser.UserDataAccess().Get();
-            var Config = new MapperConfiguration(cfg =>
+            var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<User, UserDTO>();
             });
             var mapper = new Mapper(config);
-            var convertedData = Mapper.Map<List<UserDTO>>(DataAccesser);
+            var convertedData = mapper.Map<List<UserDTO>>(data);
             return convertedData;
 
 
@@ -30,7 +30,14 @@ namespace EWT_BLL.Services
 
         public static UserDTO Get(int id)
         {
-            return DataAccesser.UserDataAccess().Get(id);
+            var data = DataAccesser.UserDataAccess().Get(id);
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<User, UserDTO>();
+            });
+            var mapper = new Mapper(config);
+            var entity = mapper.Map<UserDTO>(data);
+            return entity;
         }
     }
 }

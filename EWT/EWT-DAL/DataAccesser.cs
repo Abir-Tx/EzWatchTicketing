@@ -19,9 +19,9 @@ namespace EWT_DAL
         }
 
 
-        public static object UserDataAccess()
+        public static IRepo<User, int, bool> UserDataAccess()
         {
-            throw new NotImplementedException();
+            return new UserRepo(); 
         }
 
         public static IRepo<Payment, int, bool>PaymentDataAccess()

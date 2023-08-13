@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="DTOs\HallDTO.cs" />
     <Compile Include="DTOs\HallSeatDTO.cs" />
     <Compile Include="DTOs\PaymentDTO.cs" />
@@ -54,23 +53,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HallService.cs" />
     <Compile Include="Services\PaymentServices.cs" />
-
     <Compile Include="DTOs\AdminDTO.cs" />
     <Compile Include="DTOs\EmployeeDTO.cs" />
-    
     <Compile Include="DTOs\UserDTO.cs" />
-
     <Compile Include="DTOs\MovieDTO.cs" />
     <Compile Include="DTOs\TicketDTO.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
-
     <Compile Include="Services\Userservice.cs" />
-
     <Compile Include="Services\MovieService.cs" />
     <Compile Include="Services\TicketService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EWT-DAL\EWT-DAL.csproj">
@@ -78,14 +77,5 @@
       <Name>EWT-DAL</Name>
     </ProjectReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
