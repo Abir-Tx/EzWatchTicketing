@@ -1,5 +1,6 @@
 ﻿using EWT_BLL.DTOs;
 using EWT_BLL.Services;
+using EWT_UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +73,28 @@ namespace EWT_UI.Controllers
         {
             EmployeeService.Update(emp);
             return Request.CreateResponse(HttpStatusCode.OK, "Employee ID: " + emp.Id + " has been updated successfully");
+        }
+
+        [HttpPost]
+        [Route("api/employee/login")]
+        public HttpResponseMessage Login(LoginModel login)
+        {
+            try
+            {
+                var token = AuthService.Login(login.Username, login.Password);
+                if(token != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, token);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Username or password invalid");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
     }
 }
