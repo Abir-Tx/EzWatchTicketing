@@ -13,8 +13,8 @@ namespace EWT_DAL.EF.Models
         public string TokenKey { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ExpiredAt { get; set; }
-        [ForeignKey("User")]
         public string Username { get; set; }
-        public virtual User User { get; set; }
+        //[ForeignKey("User")]
+        //public virtual User User { get; set; }
     }
 }
