@@ -46,5 +46,10 @@ namespace EWT_DAL
         public static IRepo<Token, int, Token> TokenDataAccess() {
             return new TokenRepo();
         }
+
+        public static IAuth<Employee> AuthDataAccess()
+        {
+            return new EmployeeRepo();
+        }
     }
 }

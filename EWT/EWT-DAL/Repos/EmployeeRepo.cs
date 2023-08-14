@@ -7,8 +7,17 @@ using System.Linq;
 
 namespace EWT_DAL.Repos
 {
-    internal class EmployeeRepo : Repo, IRepo<Employee, int, bool>
-    { 
+    internal class EmployeeRepo : Repo, IRepo<Employee, int, bool>, IAuth<Employee>
+    {
+        public Employee Authenticate(string username, string password)
+        {
+            var data = from emp in db.Employees
+                       where emp.Username.Equals(username)
+                       && emp.Password.Equals(password)
+                       select emp;
+            return data.SingleOrDefault();
+        }
+
         public bool Create(Employee obj)
         {
             db.Employees.Add(obj);
