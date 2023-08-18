@@ -12,6 +12,19 @@ namespace EWT_BLL.Services
 {
     public class AuthService
     {
+        public static bool IsEmployee(string token)
+        {
+            string username = (from t in DataAccesser.TokenDataAccess().Get()
+                            where t.TokenKey == token
+                            && t.ExpiredAt == null
+                            select t.Username).SingleOrDefault();
+            string assignedRole = (from emp in DataAccesser.EmployeeDataAccess().Get()
+                                   where emp.Username == username
+                                   select emp.Role.RoleName).SingleOrDefault();
+            if (assignedRole == "Employee") return true;
+            else return false;
+        }
+
         public static bool IsTokenValid(string token)
         {
             var tk = (from t in DataAccesser.TokenDataAccess().Get()
