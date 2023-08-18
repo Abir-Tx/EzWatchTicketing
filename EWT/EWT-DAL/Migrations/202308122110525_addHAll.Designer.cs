@@ -7,13 +7,13 @@ namespace EWT_DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class MergeNelow : IMigrationMetadata
+    public sealed partial class addHAll : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MergeNelow));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addHAll));
         
         string IMigrationMetadata.Id
         {
-            get { return "202308122041435_MergeNelow"; }
+            get { return "202308122110525_addHAll"; }
         }
         
         string IMigrationMetadata.Source
