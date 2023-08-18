@@ -23,7 +23,7 @@ namespace EWT_UI.AuthFilters
                 var token = header.ToString();
                 if (token != null && !AuthService.IsTokenValid(token))
                 {
-                    actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Unauthorized, new { Msg = "Supplied token in invalid or expired" });
+                    actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Unauthorized, new { Msg = "Supplied token is invalid or expired" });
                 }
             }
 
