@@ -1,5 +1,6 @@
 ﻿using EWT_BLL.DTOs;
 using EWT_BLL.Services;
+using EWT_UI.AuthFilters;
 using EWT_UI.Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace EWT_UI.Controllers
     {
         [HttpGet]
         [Route("api/employee/all")]
+        //[Authorize(Roles = "Employee")]
+        [LoginFilter]
         public HttpResponseMessage All()
         {
             try
@@ -82,7 +85,7 @@ namespace EWT_UI.Controllers
             try
             {
                 var token = AuthService.Login(login.Username, login.Password);
-                if(token != null)
+                if (token != null)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, token);
                 }
