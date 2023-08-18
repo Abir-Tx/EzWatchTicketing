@@ -24,12 +24,12 @@ namespace EWT_DAL.Repos
 
         public List<Token> Get()
         {
-            throw new NotImplementedException();
+            return db.Tokens.ToList();
         }
 
         public Token Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Tokens.Find(id);
         }
 
         public Token Update(Token obj)
