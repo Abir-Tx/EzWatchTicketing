@@ -18,8 +18,7 @@ namespace EWT_UI.Controllers
     {
         [HttpGet]
         [Route("api/employee/all")]
-        //[Authorize(Roles = "Employee")]
-        [LoginFilter]
+        [EmployeeFilter]
         public HttpResponseMessage All()
         {
             try
@@ -64,6 +63,7 @@ namespace EWT_UI.Controllers
 
         [HttpDelete]
         [Route("api/employee/delete/{id}")]
+
         public HttpResponseMessage Delete(int id)
         {
             if (EmployeeService.Delete(id)) return Request.CreateResponse(HttpStatusCode.OK, "The Employee with ID: " + id + " has been deleted successfully");

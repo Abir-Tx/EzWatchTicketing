@@ -21,7 +21,7 @@ namespace EWT_DAL.Repos
 
         public bool Create(Employee obj)
         {
-            var role = db.Roles.FirstOrDefault(r => r.RoleName == "Admin");
+            var role = db.Roles.FirstOrDefault(r => r.RoleName == "Employee");
 
             if (role != null)
             {
