@@ -2,6 +2,7 @@
 using EWT_DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -20,7 +21,13 @@ namespace EWT_DAL.Repos
 
         public bool Create(Employee obj)
         {
-            db.Employees.Add(obj);
+            var role = db.Roles.FirstOrDefault(r => r.RoleName == "Admin");
+
+            if (role != null)
+            {
+                obj.Role = role;
+                db.Employees.Add(obj);
+            }
             return db.SaveChanges() > 0;
         }
 
@@ -37,7 +44,7 @@ namespace EWT_DAL.Repos
 
         public List<Employee> Get()
         {
-          return db.Employees.ToList();
+            return db.Employees.ToList();
         }
 
         public Employee Get(int id)
@@ -64,6 +71,6 @@ namespace EWT_DAL.Repos
             db.Employees.AddOrUpdate(employeeToUpdate);
             return db.SaveChanges() > 0;
         }
-    
+
     }
 }

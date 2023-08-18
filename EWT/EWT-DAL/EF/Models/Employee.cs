@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EWT_DAL.EF.Models
 {
@@ -11,5 +12,8 @@ namespace EWT_DAL.EF.Models
         [Required] public string Name { get; set; }
         public string Address { get; set; }
         [Required] public double Salary { get; set; }
+
+        public int RoleId { get; set; } // Foreign key
+        public virtual Role Role { get; set; } // Navigation property
     }
 }
