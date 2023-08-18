@@ -59,12 +59,15 @@
     <Compile Include="EF\Models\Hall.cs" />
     <Compile Include="EF\Models\Payment.cs" />
     <Compile Include="EF\Models\PayMethod.cs" />
+    <Compile Include="EF\Models\Role.cs" />
     <Compile Include="EF\Models\Seat.cs" />
     <Compile Include="EF\Models\Admin.cs" />
     <Compile Include="EF\Models\Employee.cs" />
     <Compile Include="EF\Models\Movie.cs" />
     <Compile Include="EF\Models\Ticket.cs" />
+    <Compile Include="EF\Models\Token.cs" />
     <Compile Include="EF\Models\User.cs" />
+    <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202308112030579_InitDB.cs" />
     <Compile Include="Migrations\202308112030579_InitDB.designer.cs">
@@ -81,6 +84,18 @@
     <Compile Include="Migrations\202308130029423_payment_method_added.cs" />
     <Compile Include="Migrations\202308130029423_payment_method_added.designer.cs">
       <DependentUpon>202308130029423_payment_method_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308140646363_InitToken.cs" />
+    <Compile Include="Migrations\202308140646363_InitToken.designer.cs">
+      <DependentUpon>202308140646363_InitToken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308180554349_AddRolesToUsers.cs" />
+    <Compile Include="Migrations\202308180554349_AddRolesToUsers.designer.cs">
+      <DependentUpon>202308180554349_AddRolesToUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308180602311_AddRoleToEmp.cs" />
+    <Compile Include="Migrations\202308180602311_AddRoleToEmp.designer.cs">
+      <DependentUpon>202308180602311_AddRoleToEmp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +125,7 @@
     <Compile Include="Repos\AdminRepo.cs" />
     <Compile Include="Repos\EmployeeRepo.cs" />
     <Compile Include="Repos\MovieRepo.cs" />
+    <Compile Include="Repos\TokenRepo.cs" />
     <Compile Include="Repos\UserRepo.cs" />
     <Compile Include="Repos\TicketRepo.cs" />
   </ItemGroup>
@@ -144,6 +160,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308121950396_CreateTableTickets.resx">
       <DependentUpon>202308121950396_CreateTableTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308140646363_InitToken.resx">
+      <DependentUpon>202308140646363_InitToken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308180554349_AddRolesToUsers.resx">
+      <DependentUpon>202308180554349_AddRolesToUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308180602311_AddRoleToEmp.resx">
+      <DependentUpon>202308180602311_AddRoleToEmp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -2,16 +2,32 @@
 using EWT_DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace EWT_DAL.Repos
 {
-    internal class EmployeeRepo : Repo, IRepo<Employee, int, bool>
-    { 
+    internal class EmployeeRepo : Repo, IRepo<Employee, int, bool>, IAuth<Employee>
+    {
+        public Employee Authenticate(string username, string password)
+        {
+            var data = from emp in db.Employees
+                       where emp.Username.Equals(username)
+                       && emp.Password.Equals(password)
+                       select emp;
+            return data.SingleOrDefault();
+        }
+
         public bool Create(Employee obj)
         {
-            db.Employees.Add(obj);
+            var role = db.Roles.FirstOrDefault(r => r.RoleName == "Employee");
+
+            if (role != null)
+            {
+                obj.Role = role;
+                db.Employees.Add(obj);
+            }
             return db.SaveChanges() > 0;
         }
 
@@ -28,7 +44,7 @@ namespace EWT_DAL.Repos
 
         public List<Employee> Get()
         {
-          return db.Employees.ToList();
+            return db.Employees.ToList();
         }
 
         public Employee Get(int id)
@@ -55,6 +71,6 @@ namespace EWT_DAL.Repos
             db.Employees.AddOrUpdate(employeeToUpdate);
             return db.SaveChanges() > 0;
         }
-    
+
     }
 }
