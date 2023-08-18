@@ -17,7 +17,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Restore NuGet packages
-      run: nuget restore EWT.sln
+      run: nuget restore ./EWT/EWT.sln
 
     - name: Build
-      run: msbuild /p:Configuration=Release EWT.sln
+      run: msbuild /p:Configuration=Release ./EWT/EWT.sln
