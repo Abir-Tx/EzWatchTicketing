@@ -1,0 +1,23 @@
+name: Build EWT
+on:
+  push:
+    branches:
+      - main
+      - add-cicd
+
+jobs:
+  build:
+    runs-on: windows-latest # Choose the appropriate runner based on your project's needs
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Restore NuGet packages
+      run: nuget restore ./EWT/EWT.sln
+
+    - name: Build
+      run: msbuild /p:Configuration=Release ./EWT/EWT.sln
