@@ -12,6 +12,19 @@ namespace EWT_BLL.Services
 {
     public class AuthService
     {
+        public static bool IsTokenValid(string token)
+        {
+            var tk = (from t in DataAccesser.TokenDataAccess().Get()
+                      where t.TokenKey.Equals(token)
+                      && t.ExpiredAt == null
+                      select t).SingleOrDefault();
+            if (tk != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public static TokenDTO Login(string username, string password)
         {
             var data = DataAccesser.AuthDataAccess().Authenticate(username, password);
