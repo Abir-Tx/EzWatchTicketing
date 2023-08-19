@@ -4,6 +4,9 @@ on:
     branches:
       - main
       - add-cicd
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
