@@ -29,3 +29,6 @@ We use **bearer token** role based authentication in our APIs. An User must ***l
 
 ## Endpoints
 
+We do the API testing on **Postman**. So I have decided to document the API on postman first. You can find the API endpoints and documentation on them [here](https://documenter.getpostman.com/view/21420955/2s9Y5SWkpi)
+
+## Contributors
