@@ -25,6 +25,7 @@ We use **bearer token** role based authentication in our APIs. An User must ***l
 
 ### Example Authentication Image
 
+![authentication example](../.github/images/EWT_API_Authentication_example.png)
 
 ## Endpoints
 
