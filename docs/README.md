@@ -17,4 +17,14 @@ View the frontend design live at [here](https://www.figma.com/community/file/127
 
 ## Project Scenario
 
+There are 4 users in this project: (1) General User, (2) Employee, (3) Admin & (4) Manager. Each user will have different kinds of entities. Each user will have different API endpoints. Most of the API endpoints will be served based on **rolse based authentication**. Some API routes will have combined results outcomes and those will be gained by combining different user tables or entities & those APIs will be called **feature API**. 
+
+## Authentication
+
+We use **bearer token** role based authentication in our APIs. An User must ***login*** first, then grab the **token** & pass that token as `Authorization` header in requests. The format for passing the token is shown below
+
+### Example Authentication Image
+
+
+## Endpoints
 
