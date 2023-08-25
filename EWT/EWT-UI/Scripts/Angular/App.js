@@ -16,3 +16,27 @@ app.controller("MovieController", function ($scope, $http) {
             console.error("Error fetching data:", error);
         });
 });
+
+app.controller("LoginController", function ($scope, $http) {
+    $scope.login = function () {
+        console.log("Button clicked!"); 
+        const credentials = {
+            username: $scope.username,
+            password: $scope.password
+        };
+
+        $http.post("https://localhost:44365/api/employee/login", credentials)
+            .then(function (response) {
+                // Login successful
+                const token = response.data.TokenKey;
+                // Store the token in local storage or a cookie
+                localStorage.setItem("token", token);
+                // Redirect or perform further actions
+                console.log("Login successful");
+            })
+            .catch(function (error) {
+                // Login failed
+                console.error("Login failed:", error);
+            });
+    };
+});
