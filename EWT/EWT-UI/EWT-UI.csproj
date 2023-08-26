@@ -155,7 +155,6 @@
     </Compile>
     <Compile Include="Models\AdminDTO.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\TicketDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

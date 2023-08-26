@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202308180602311_AddRoleToEmp.designer.cs">
       <DependentUpon>202308180602311_AddRoleToEmp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308260942080_TicketMovieRelation.cs" />
+    <Compile Include="Migrations\202308260942080_TicketMovieRelation.designer.cs">
+      <DependentUpon>202308260942080_TicketMovieRelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\HallRepo.cs" />
@@ -169,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308180602311_AddRoleToEmp.resx">
       <DependentUpon>202308180602311_AddRoleToEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308260942080_TicketMovieRelation.resx">
+      <DependentUpon>202308260942080_TicketMovieRelation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
