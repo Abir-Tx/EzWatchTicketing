@@ -22,5 +22,7 @@ namespace EWT_DAL.EF.Models
 
         public string Location { get; set; }
 
+        public int MovieId { get; set; } //FK
+        public virtual Movie Movie { get; set; }
     }
 }
