@@ -140,6 +140,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AuthFilters\AdminFilter.cs" />
     <Compile Include="AuthFilters\EmployeeFilter.cs" />
     <Compile Include="AuthFilters\LoginFilter.cs" />
     <Compile Include="Controllers\HallController.cs" />
@@ -154,7 +155,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AdminDTO.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\TicketDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
