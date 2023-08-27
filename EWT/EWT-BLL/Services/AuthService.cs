@@ -25,6 +25,19 @@ namespace EWT_BLL.Services
             else return false;
         }
 
+        public static bool IsAdmin(string token)
+        {
+            string username = (from t in DataAccesser.TokenDataAccess().Get()
+                               where t.TokenKey == token
+                               && t.ExpiredAt == null
+                               select t.Username).SingleOrDefault();
+            string assignedRole = (from ad in DataAccesser.AdminDataAccess().Get()
+                                   where ad.Name == username
+                                   select ad.Role.RoleName).SingleOrDefault();
+            if (assignedRole == "Admin") return true;
+            else return false;
+        }
+
         public static bool IsTokenValid(string token)
         {
             var tk = (from t in DataAccesser.TokenDataAccess().Get()
