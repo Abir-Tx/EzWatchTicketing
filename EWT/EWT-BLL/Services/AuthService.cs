@@ -57,5 +57,21 @@ namespace EWT_BLL.Services
             var convertedData = mapper.Map<TokenDTO>(tk);
             return convertedData;
         }
+
+
+        public static bool IsUser (string token)
+        {
+            string username=(from t in DataAccesser.TokenDataAccess().Get()
+                         where t.TokenKey==token
+                         && t.ExpiredAt == null
+                         select t.Username).SingleOrDefault();
+            string assignedRole = (from user in DataAccesser.UserDataAccess().Get()
+                                   where user.Username == username
+                                   select user.Role.RoleName).SingleOrDefault();
+            if (assignedRole == "User")
+                return true;
+            else
+                return false;
+        }
     }
 }
