@@ -1,5 +1,6 @@
 ﻿using EWT_BLL.DTOs;
 using EWT_BLL.Services;
+using EWT_UI.AuthFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +28,10 @@ namespace EWT_UI.Controllers
             catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
         }
 
+        // Authorized Endpoints
         [HttpPost]
         [Route("api/movie/create")]
+        [EmployeeFilter]
         public HttpResponseMessage Create(MovieDTO movie)
         {
             MovieService.Create(movie);
@@ -37,6 +40,7 @@ namespace EWT_UI.Controllers
 
         [HttpPut]
         [Route("api/movie/update")]
+        [EmployeeFilter]
         public HttpResponseMessage Update(MovieDTO movie)
         {
             MovieService.Update(movie);
@@ -45,7 +49,9 @@ namespace EWT_UI.Controllers
 
         [HttpDelete]
         [Route("api/movie/delete/{id}")]
-        public HttpResponseMessage Delete(int id) {
+        [EmployeeFilter]
+        public HttpResponseMessage Delete(int id)
+        {
             if (MovieService.Delete(id)) return Request.CreateResponse(HttpStatusCode.OK, "The movie with ID: " + id + " has been deleted successfully");
             else return Request.CreateResponse(HttpStatusCode.BadRequest, "Cannot delete the requested movie");
         }
