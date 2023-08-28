@@ -39,4 +39,12 @@ app.controller("LoginController", function ($scope, $http) {
                 console.error("Login failed:", error);
             });
     };
+
+
+    function isTokenValid(expiredAt) {
+        if (expiredAt == null) return true
+        const currentTimestamp = Math.floor(Date.now() / 1000); // Convert to seconds
+
+        return currentTimestamp < expiredAt;
+    }
 });
