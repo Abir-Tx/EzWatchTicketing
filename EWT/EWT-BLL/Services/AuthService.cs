@@ -79,7 +79,7 @@ namespace EWT_BLL.Services
                          && t.ExpiredAt == null
                          select t.Username).SingleOrDefault();
             string assignedRole = (from user in DataAccesser.UserDataAccess().Get()
-                                   where user.Username == username
+                                   where user.Name == username
                                    select user.Role.RoleName).SingleOrDefault();
             if (assignedRole == "User")
                 return true;

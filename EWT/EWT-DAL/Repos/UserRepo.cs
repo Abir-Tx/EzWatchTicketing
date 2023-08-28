@@ -11,6 +11,11 @@ namespace EWT_DAL.Repos
 {
     internal class UserRepo : Repo, IRepo<User, int, bool>, IAuth<User>
     {
+        public User Authenticate(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
         public User Authentication(string username, string password)
         {
             var data= from user in db.Users
@@ -48,11 +53,6 @@ namespace EWT_DAL.Repos
         }
 
         public List<User> Get()
-        {
-            return db.Users.ToList();
-        }
-
-        public User Get(int id)
         {
             return db.Users.ToList();
         }
