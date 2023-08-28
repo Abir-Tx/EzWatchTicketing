@@ -63,7 +63,7 @@
     <Compile Include="DTOs\TicketDTO.cs" />
     <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
-    <Compile Include="Services\Userservice.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\MovieService.cs" />
     <Compile Include="Services\TicketService.cs" />
   </ItemGroup>
