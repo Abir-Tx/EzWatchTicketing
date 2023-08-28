@@ -22,5 +22,8 @@ namespace EWT_DAL.EF.Models
 
         public string City { get; set; }
 
+        public int RoleId { get; set; } // Foreign key
+        public virtual Role Role { get; set; } // Navigation property
+
     }
 }

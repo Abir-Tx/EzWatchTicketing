@@ -66,3 +66,16 @@ This should avoid the error.
 ### Run The Project
 
 Now test the project first before adding Developement. Everyting should work fine now. Test the APIs endpoints uisng **Postman**
+
+
+## Got And Error ?
+
+### Context Has Changed Error
+
+If you are getting this error when you run the project and it runs well then test the endpoints in postman and postman throws this error - 
+
+```bash
+The model backing the 'EWTContext' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269)
+```
+
+Then just delete the `dbo.__migrationsHistory__` file inside the SQL Management Stuidio and then re run the project

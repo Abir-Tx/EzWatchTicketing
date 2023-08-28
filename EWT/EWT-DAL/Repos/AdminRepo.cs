@@ -10,6 +10,15 @@ namespace EWT_DAL.Repos
 {
     internal class AdminRepo : Repo, IRepo<Admin, int, bool>
     {
+        public Admin Authenticate(string username, string password)
+        {
+            var data = from ad in db.Admins
+                       where ad.Name.Equals(username)
+                       && ad.Password.Equals(password)
+                       select ad;
+            return data.SingleOrDefault();
+        }
+
         public bool Create(Admin obj)
         {
             db.Admins.Add(obj);

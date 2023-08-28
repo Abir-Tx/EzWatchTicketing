@@ -78,6 +78,7 @@ namespace EWT_UI.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, "Employee ID: " + emp.Id + " has been updated successfully");
         }
 
+        // The Login API for Employee
         [HttpPost]
         [Route("api/employee/login")]
         public HttpResponseMessage Login(LoginModel login)
@@ -98,6 +99,62 @@ namespace EWT_UI.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
+        }
+
+
+        // Employee Feature APIs
+
+        // Update the movie by movie name
+        [HttpPost]
+        [Route("api/employee/movie/update")]
+        [EmployeeFilter]
+        public HttpResponseMessage UpdateMovie(MovieDTO movie)
+        {
+            try
+            {
+                bool updateSuccessful = MovieService.Update(movie);
+
+                if (updateSuccessful)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "Movie updated successfully");
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Movie not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+
+        [HttpGet]
+        [Route("api/employee/movie/all")]
+        [EmployeeFilter]
+        public HttpResponseMessage GetAllMovie()
+        {
+            try { return Request.CreateResponse(HttpStatusCode.OK, MovieService.Get()); }
+            catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
+
+        [HttpPost]
+        [Route("api/employee/movie/create")]
+        [EmployeeFilter]
+        public HttpResponseMessage AddNewMovie(MovieDTO movie)
+        {
+            MovieService.Create(movie);
+            return Request.CreateResponse(HttpStatusCode.OK, "Movie id: " + movie.Id + " has been added to the database");
+        }
+
+        [HttpDelete]
+        [Route("api/employee/movie/delete/{id}")]
+        [EmployeeFilter]
+        public HttpResponseMessage DeleteMovie(int id)
+        {
+            if (MovieService.Delete(id)) return Request.CreateResponse(HttpStatusCode.OK, "The movie with ID: " + id + " has been deleted successfully");
+            else return Request.CreateResponse(HttpStatusCode.BadRequest, "Cannot delete the requested movie");
         }
     }
 }
