@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -12,6 +13,7 @@ namespace EWT_DAL.EF.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
+        public int TotalSeats { get;set; }
         
         public ICollection<Seat> Seats { get; set; }    
         public Hall()
@@ -19,6 +21,9 @@ namespace EWT_DAL.EF.Models
             Seats = new List<Seat>();    
         }
         //add movieid
+        //[ForeignKey("Movie")]
+        //public int MovieId { get; set; }
+        //public virtual Movie Movie { get; set; }
         
     }
 }

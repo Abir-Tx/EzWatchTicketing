@@ -57,7 +57,9 @@
     <Compile Include="DataAccesser.cs" />
     <Compile Include="EF\EWTContext.cs" />
     <Compile Include="EF\Models\Booking.cs" />
+    <Compile Include="EF\Models\Food.cs" />
     <Compile Include="EF\Models\Hall.cs" />
+    <Compile Include="EF\Models\OrderFood.cs" />
     <Compile Include="EF\Models\Payment.cs" />
     <Compile Include="EF\Models\PayMethod.cs" />
     <Compile Include="EF\Models\Role.cs" />
@@ -109,6 +111,14 @@
     <Compile Include="Migrations\202308282133106_addbooking.cs" />
     <Compile Include="Migrations\202308282133106_addbooking.designer.cs">
       <DependentUpon>202308282133106_addbooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308282245101_foodandorder.cs" />
+    <Compile Include="Migrations\202308282245101_foodandorder.designer.cs">
+      <DependentUpon>202308282245101_foodandorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308282245549_addbooking1.cs" />
+    <Compile Include="Migrations\202308282245549_addbooking1.designer.cs">
+      <DependentUpon>202308282245549_addbooking1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -191,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308282133106_addbooking.resx">
       <DependentUpon>202308282133106_addbooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308282245101_foodandorder.resx">
+      <DependentUpon>202308282245101_foodandorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308282245549_addbooking1.resx">
+      <DependentUpon>202308282245549_addbooking1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
