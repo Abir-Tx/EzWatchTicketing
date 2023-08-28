@@ -17,7 +17,7 @@ app.controller("MovieController", function ($scope, $http) {
         });
 });
 
-app.controller("LoginController", function ($scope, $http) {
+app.controller("LoginController", function ($scope, $http, $window) {
     $scope.login = function () {
         console.log("Button clicked!"); 
         const credentials = {
@@ -31,8 +31,18 @@ app.controller("LoginController", function ($scope, $http) {
                 const token = response.data.TokenKey;
                 // Store the token in local storage or a cookie
                 localStorage.setItem("token", token);
-                // Redirect or perform further actions
+                    
                 console.log("Login successful");
+
+                // Redirect to a new page if token in available
+                // Check if token is valid before redirection
+                if (isTokenValid(response.data.ExpiredAt)) {
+                    $window.location.href = "https://localhost:44365/Home/Movies";
+                }
+                else {
+                    console.log("Token Expired. Expired token: " + token)
+                }
+
             })
             .catch(function (error) {
                 // Login failed
