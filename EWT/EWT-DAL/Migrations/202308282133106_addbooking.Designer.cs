@@ -7,13 +7,13 @@ namespace EWT_DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class changehallandaddbookingtomodelcs : IMigrationMetadata
+    public sealed partial class addbooking : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changehallandaddbookingtomodelcs));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addbooking));
         
         string IMigrationMetadata.Id
         {
-            get { return "202308282129313_changehall and add booking to model.cs"; }
+            get { return "202308282133106_addbooking"; }
         }
         
         string IMigrationMetadata.Source

@@ -106,13 +106,9 @@
     <Compile Include="Migrations\202308280725470_Polish.designer.cs">
       <DependentUpon>202308280725470_Polish.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202308282126053_changehall and add booking to model.cs" />
-    <Compile Include="Migrations\202308282126053_changehall and add booking to model.designer.cs">
-      <DependentUpon>202308282126053_changehall and add booking to model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202308282129313_changehall and add booking to model.cs.cs" />
-    <Compile Include="Migrations\202308282129313_changehall and add booking to model.cs.designer.cs">
-      <DependentUpon>202308282129313_changehall and add booking to model.cs.cs</DependentUpon>
+    <Compile Include="Migrations\202308282133106_addbooking.cs" />
+    <Compile Include="Migrations\202308282133106_addbooking.designer.cs">
+      <DependentUpon>202308282133106_addbooking.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,10 +189,9 @@
     <EmbeddedResource Include="Migrations\202308280725470_Polish.resx">
       <DependentUpon>202308280725470_Polish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308282126053_changehall and add booking to model.resx">
-      <DependentUpon>202308282126053_changehall and add booking to model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202308282133106_addbooking.resx">
+      <DependentUpon>202308282133106_addbooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308282129313_changehall and add booking to model.cs.resx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
