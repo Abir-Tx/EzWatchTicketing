@@ -79,3 +79,9 @@ The model backing the 'EWTContext' context has changed since the database was cr
 ```
 
 Then just delete the `dbo.__migrationsHistory__` file inside the SQL Management Stuidio and then re run the project
+
+## Technical Abbreviations
+
+The project might use some short words or abbreviations which might become a bit hard to understand in future or for new-comers. So I will try to add them in this section if we use any in this project.
+
+- `fa`: Feature-API - It's mainly used in the branch naming
