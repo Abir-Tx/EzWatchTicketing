@@ -1,5 +1,6 @@
 ﻿using EWT_BLL.DTOs;
 using EWT_BLL.Services;
+using EWT_UI.AuthFilters;
 using EWT_UI.Models;
 using System;
 using System.Collections.Generic;
@@ -63,7 +64,7 @@ namespace EWT_UI.Controllers
         public HttpResponseMessage Delete(int id)
         {
             if (UserService.Delete(id))
-                return Request.CreateResponse(HttpStatusCode.OK, "The user with id :" + id + "has been deleted successfully");
+                return Request.CreateResponse(HttpStatusCode.OK, "The user with id: " + id + " has been deleted successfully");
             else
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "cannot delete the requested user");
         }
@@ -73,7 +74,7 @@ namespace EWT_UI.Controllers
         public HttpResponseMessage Update(UserDTO user)
         {
             UserService.Update(user);
-            return Request.CreateResponse(HttpStatusCode.OK, "User Id:" + user.Id + "has been updated successfully");
+            return Request.CreateResponse(HttpStatusCode.OK, "User Id: " + user.Id + " has been updated successfully");
         }
 
         [HttpPost]
