@@ -177,6 +177,7 @@ namespace EWT_UI.Controllers
             else return Request.CreateResponse(HttpStatusCode.BadRequest, "Can not delete the requested movie ticket");
         }
 
+        // Update a ticket
         [HttpPost]
         [Route("api/employee/movie/tickets/update")]
         [EmployeeFilter]
