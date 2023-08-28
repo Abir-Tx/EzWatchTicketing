@@ -214,5 +214,15 @@ namespace EWT_UI.Controllers
             try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Get()); }
             catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
         }
+
+        // Get specific user using ID
+        [HttpGet]
+        [Route("api/employee/user/{id}")]
+        [EmployeeFilter]
+        public HttpResponseMessage GetSingleUser(int id)
+        {
+            try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Get(id)); }
+            catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
     }
 }
