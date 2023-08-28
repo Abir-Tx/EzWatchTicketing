@@ -28,6 +28,16 @@ namespace EWT_DAL
         {
             return new PaymentRepo();
         }
+        public static IRepo<Food, int, bool> FoodDataAccess()
+        {
+            return new FoodRepo();
+        }
+        public static IRepo<Booking, int, bool> BookingDataAccess()
+        {
+            return new BookingRepo();
+        }
+
+
 
         public static IRepo<Employee, int, bool> EmployeeDataAccess() { return new EmployeeRepo(); }
         // Data Accesser for Movies
