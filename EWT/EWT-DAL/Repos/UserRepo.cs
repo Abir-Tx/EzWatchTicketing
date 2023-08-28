@@ -25,12 +25,10 @@ namespace EWT_DAL.Repos
             var role = db.Roles.FirstOrDefault(r => r.RoleName == "User");
             if (role != null)
             {
-                obj.Role = role;
+               obj.Role = role;
                 db.Users.Add(obj);
             }
-
             return db.SaveChanges() > 0;
-
         }
 
         public bool Delete(int id)

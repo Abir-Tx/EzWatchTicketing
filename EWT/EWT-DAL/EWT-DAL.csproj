@@ -101,6 +101,10 @@
     <Compile Include="Migrations\202308241841376_AddAdminRoleId.designer.cs">
       <DependentUpon>202308241841376_AddAdminRoleId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308280725470_Polish.cs" />
+    <Compile Include="Migrations\202308280725470_Polish.designer.cs">
+      <DependentUpon>202308280725470_Polish.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\HallRepo.cs" />
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308241841376_AddAdminRoleId.resx">
       <DependentUpon>202308241841376_AddAdminRoleId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308280725470_Polish.resx">
+      <DependentUpon>202308280725470_Polish.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
