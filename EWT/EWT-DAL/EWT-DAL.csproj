@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202308180602311_AddRoleToEmp.designer.cs">
       <DependentUpon>202308180602311_AddRoleToEmp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308241841376_AddAdminRoleId.cs" />
+    <Compile Include="Migrations\202308241841376_AddAdminRoleId.designer.cs">
+      <DependentUpon>202308241841376_AddAdminRoleId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202308260942080_TicketMovieRelation.cs" />
     <Compile Include="Migrations\202308260942080_TicketMovieRelation.designer.cs">
       <DependentUpon>202308260942080_TicketMovieRelation.cs</DependentUpon>
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308180602311_AddRoleToEmp.resx">
       <DependentUpon>202308180602311_AddRoleToEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308241841376_AddAdminRoleId.resx">
+      <DependentUpon>202308241841376_AddAdminRoleId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308260942080_TicketMovieRelation.resx">
       <DependentUpon>202308260942080_TicketMovieRelation.cs</DependentUpon>
