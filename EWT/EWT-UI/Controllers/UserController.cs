@@ -12,34 +12,30 @@ namespace EWT_UI.Controllers
 {
     public class UserController : ApiController
     {
-            [HttpGet]
-            [Route("api/user/all")]
-            public HttpResponseMessage All()
+        [HttpGet]
+        [Route("api/user/all")]
+        public HttpResponseMessage All()
+        {
+            try
             {
-                try
-                {
-                    var data = UserService.Get();
-                    return Request.CreateResponse(HttpStatusCode.OK, data);
-                }
-                catch (Exception ex)
-                {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
-                }
+                var data = UserService.Get();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
             }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
 
         [HttpPost]
-
         [Route("api/user/create")]
-
-        public HttpResponseMessage Create (UserDTO user)
+        public HttpResponseMessage Create(UserDTO user)
         {
             try
             {
                 var data = UserService.Create(user);
                 return Request.CreateResponse(HttpStatusCode.OK, "New user added successfully");
-
             }
-
             catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
@@ -48,38 +44,32 @@ namespace EWT_UI.Controllers
 
         [HttpGet]
         [Route("api/user/get/{id}")]
-
-        public HttpResponseMessage GetById (int id) {
-
+        public HttpResponseMessage GetById(int id)
+        {
             try
             {
                 var data = UserService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
-
             }
-
             catch (Exception ex)
             {
-                return Request.CreateResponse (HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
-        
+
         }
 
         [HttpDelete]
         [Route("api/user/delete/{id}")]
-
-        public HttpResponseMessage Delete (int id) {
-
+        public HttpResponseMessage Delete(int id)
+        {
             if (UserService.Delete(id))
                 return Request.CreateResponse(HttpStatusCode.OK, "The user with id :" + id + "has been deleted successfully");
             else
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "cannot delete the requested user");
-        
         }
 
         [HttpPut]
-        [Route ("api/user/update")]
-
+        [Route("api/user/update")]
         public HttpResponseMessage Update(UserDTO user)
         {
             UserService.Update(user);
@@ -88,13 +78,12 @@ namespace EWT_UI.Controllers
 
         [HttpPost]
         [Route("api/user/login")]
-
         public HttpResponseMessage Login(LoginModel login)
         {
             try
             {
                 var token = AuthService.Login(login.Username, login.Password);
-                if(token != null)
+                if (token != null)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, token);
 
@@ -111,8 +100,5 @@ namespace EWT_UI.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
-
-        }
-
-   
+    }
 }

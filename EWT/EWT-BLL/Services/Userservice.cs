@@ -22,9 +22,9 @@ namespace EWT_BLL.Services
 
             });
             var mapper = new Mapper(config);
-            var convertedData =mapper.Map<List<UserDTO>>(data);
+            var convertedData = mapper.Map<List<UserDTO>>(data);
             return convertedData;
-           
+
         }
 
         public static UserDTO Get(int id)
@@ -36,7 +36,7 @@ namespace EWT_BLL.Services
             });
 
             var mapper = new Mapper(config);
-            var entity= mapper.Map<UserDTO>(data);
+            var entity = mapper.Map<UserDTO>(data);
             return entity;
         }
 
@@ -53,17 +53,16 @@ namespace EWT_BLL.Services
             return createdUserEntity;
 
         }
-        
+
 
         public static bool Delete(int id)
         {
             var user = DataAccesser.UserDataAccess().Get(id);
-            if(user==null) 
+            if (user == null)
                 return false;
             return DataAccesser.UserDataAccess().Delete(id);
-            
-        }
 
+        }
 
         public static bool Update(UserDTO user)
         {
@@ -77,11 +76,9 @@ namespace EWT_BLL.Services
                 });
 
                 var mapper = new Mapper(config);
-                var userEntity=mapper.Map<User>(user);
+                var userEntity = mapper.Map<User>(user);
                 return DataAccesser.UserDataAccess().Update(userEntity);
             }
         }
-
-       
     }
 }
