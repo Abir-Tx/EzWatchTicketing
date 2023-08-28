@@ -13,5 +13,9 @@ namespace EWT_DAL.EF.Models
         [Required] public string Name { get; set; }
         [Required] [StringLength(100)] public string Email { get; set; }
         [Required] [StringLength(20)] public string Password { get; set; }
+
+        public int RoleId { get; set; } // Foreign key
+        public virtual Role Role { get; set; } // Navigation property
+        public string Username { get; set; }
     }
 }
