@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="DataAccesser.cs" />
     <Compile Include="EF\EWTContext.cs" />
+    <Compile Include="EF\Models\Booking.cs" />
     <Compile Include="EF\Models\Hall.cs" />
     <Compile Include="EF\Models\Payment.cs" />
     <Compile Include="EF\Models\PayMethod.cs" />
@@ -104,6 +105,10 @@
     <Compile Include="Migrations\202308280725470_Polish.cs" />
     <Compile Include="Migrations\202308280725470_Polish.designer.cs">
       <DependentUpon>202308280725470_Polish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308282126053_changehall and add booking to model.cs" />
+    <Compile Include="Migrations\202308282126053_changehall and add booking to model.designer.cs">
+      <DependentUpon>202308282126053_changehall and add booking to model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308280725470_Polish.resx">
       <DependentUpon>202308280725470_Polish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308282126053_changehall and add booking to model.resx">
+      <DependentUpon>202308282126053_changehall and add booking to model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

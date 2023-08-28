@@ -18,6 +18,7 @@ namespace EWT_DAL.EF.Models
         {
             Seats = new List<Seat>();    
         }
+        //add movieid
         
     }
 }
