@@ -1,5 +1,6 @@
 ﻿using EWT_BLL.DTOs;
 using EWT_BLL.Services;
+using EWT_UI.AuthFilters;
 using EWT_UI.Models;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace EWT_UI.Controllers
     public class AdminController : ApiController
     {
         [HttpGet]
+        [AdminFilter]
         [Route("api/admin/all")]
         public HttpResponseMessage All()
         {
@@ -31,6 +33,7 @@ namespace EWT_UI.Controllers
         }
 
         [HttpGet]
+        [AdminFilter]
         [Route("api/admin/get/{id}")]
         public HttpResponseMessage Get(int id)
         {
@@ -46,6 +49,7 @@ namespace EWT_UI.Controllers
         }
 
         [HttpPost]
+        [AdminFilter]
         [Route("api/admin/create")]
         public HttpResponseMessage Create(AdminDTO obj)
         {
@@ -61,6 +65,7 @@ namespace EWT_UI.Controllers
         }
 
         [HttpPost]
+        [AdminFilter]
         [Route("api/admin/Update")]
         public HttpResponseMessage Update(AdminDTO obj)
         {
@@ -76,6 +81,7 @@ namespace EWT_UI.Controllers
         }
 
         [HttpPost]
+        [AdminFilter]
         [Route("api/admin/delete")]
         public HttpResponseMessage Delete(int obj)
         {

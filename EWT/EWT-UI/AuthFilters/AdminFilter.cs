@@ -9,10 +9,8 @@ using System.Web.Http.Filters;
 
 namespace EWT_UI.AuthFilters
 {
-    public class AdminFilter
+    public class AdminFilter : AuthorizationFilterAttribute
     {
-        public class EmployeeFilter : AuthorizationFilterAttribute
-        {
             public override void OnAuthorization(HttpActionContext actionContext)
             {
                 var header = actionContext.Request.Headers.Authorization;
@@ -30,7 +28,6 @@ namespace EWT_UI.AuthFilters
                 }
 
                 base.OnAuthorization(actionContext);
-            }
         }
     }
 }
