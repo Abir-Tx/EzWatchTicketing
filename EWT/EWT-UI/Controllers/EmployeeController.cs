@@ -201,5 +201,36 @@ namespace EWT_UI.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+
+        // ------------------------------------------------------------- General User Management ------------------------------------------------
+
+
+        // Get all user list
+        [HttpGet]
+        [Route("api/employee/user/userlist")]
+        [EmployeeFilter]
+        public HttpResponseMessage GetAllUserList()
+        {
+            try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Get()); }
+            catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
+
+        // Get specific user using ID
+        [HttpGet]
+        [Route("api/employee/user/{id}")]
+        [EmployeeFilter]
+        public HttpResponseMessage GetSingleUser(int id)
+        {
+            try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Get(id)); }
+            catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
+
+        [HttpDelete]
+        [Route("api/employee/user/delete/{id}")]
+        [EmployeeFilter]
+        public HttpResponseMessage DeleteUser(int id) { 
+            try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Delete(id)); }
+            catch (Exception ex){ return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
     }
 }
