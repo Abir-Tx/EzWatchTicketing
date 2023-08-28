@@ -224,5 +224,13 @@ namespace EWT_UI.Controllers
             try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Get(id)); }
             catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
         }
+
+        [HttpDelete]
+        [Route("api/employee/user/delete/{id}")]
+        [EmployeeFilter]
+        public HttpResponseMessage DeleteUser(int id) { 
+            try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Delete(id)); }
+            catch (Exception ex){ return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
     }
 }
