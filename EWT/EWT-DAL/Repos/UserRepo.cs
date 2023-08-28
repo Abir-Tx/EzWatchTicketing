@@ -32,19 +32,18 @@ namespace EWT_DAL.Repos
             return db.SaveChanges() > 0;
 
         }
-       
 
         public bool Delete(int id)
         {
             var userToDelete = db.Users.FirstOrDefault(user => user.Id == id);
-            if(userToDelete != null)
+            if (userToDelete != null)
             {
                 db.Users.Remove(userToDelete);
                 return db.SaveChanges() > 0;
             }
 
             return false;
-            
+
         }
 
         public List<User> Get()
@@ -52,15 +51,15 @@ namespace EWT_DAL.Repos
             return db.Users.ToList();
         }
 
-        public User Get (int id)
+        public User Get(int id)
         {
             return db.Users.Find(id);
         }
 
-        public bool Update (User obj)
+        public bool Update(User obj)
         {
             var UserToUpdate = db.Users.Find(obj.Id);
-            if(UserToUpdate == null)
+            if (UserToUpdate == null)
             {
                 return false;
             }
@@ -69,7 +68,6 @@ namespace EWT_DAL.Repos
             UserToUpdate.Name = obj.Name;
             UserToUpdate.Email = obj.Email;
             UserToUpdate.Password = obj.Password;
-
 
             db.Users.AddOrUpdate(UserToUpdate);
             return db.SaveChanges() > 0;
