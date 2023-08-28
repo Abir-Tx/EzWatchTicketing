@@ -13,15 +13,10 @@ namespace EWT_DAL.Repos
     {
         public User Authenticate(string username, string password)
         {
-            throw new NotImplementedException();
-        }
-
-        public User Authentication(string username, string password)
-        {
-            var data= from user in db.Users
-                      where user.Username.Equals(username)
-                      && user.Password.Equals(password)
-                      select user;
+            var data = from user in db.Users
+                       where user.Username.Equals(username)
+                       && user.Password.Equals(password)
+                       select user;
             return data.SingleOrDefault();
         }
 
