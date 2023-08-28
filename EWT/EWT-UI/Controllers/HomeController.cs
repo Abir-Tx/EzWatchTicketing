@@ -10,7 +10,7 @@ namespace EWT_UI.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "EasyWatchTicketing - Movie Ticket Booking";
 
             return View();
         }
