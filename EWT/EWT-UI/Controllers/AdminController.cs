@@ -116,5 +116,29 @@ namespace EWT_UI.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+
+        [HttpPost]
+        [Route("api/admin/movie/update")]
+        [AdminFilter]
+        public HttpResponseMessage UpdateMovie(MovieDTO movie)
+        {
+            try
+            {
+                bool updateSuccessful = MovieService.Update(movie);
+
+                if (updateSuccessful)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "Movie updated successfully");
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Movie not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
     }
 }
