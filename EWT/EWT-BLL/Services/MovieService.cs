@@ -81,5 +81,23 @@ namespace EWT_BLL.Services
                 return DataAccesser.MovieDataAccess().Update(movieEntity);
             }
         }
+
+        public static List<TicketDTO> GetMovieTickets()
+        {
+            var data = DataAccesser.MovieDataAccess().Get();
+            var tickets = new List<TicketDTO>();
+
+            foreach (var movie in data)
+            {
+                var movieTickets = movie.Ticket.Select(t => new TicketDTO
+                {
+                    Id = t.Id,
+                    Price = t.Price
+                });
+                tickets.AddRange(movieTickets);
+            }
+
+            return tickets;
+        }
     }
 }
