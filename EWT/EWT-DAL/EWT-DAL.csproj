@@ -110,6 +110,10 @@
     <Compile Include="Migrations\202308282126053_changehall and add booking to model.designer.cs">
       <DependentUpon>202308282126053_changehall and add booking to model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308282129313_changehall and add booking to model.cs.cs" />
+    <Compile Include="Migrations\202308282129313_changehall and add booking to model.cs.designer.cs">
+      <DependentUpon>202308282129313_changehall and add booking to model.cs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\HallRepo.cs" />
@@ -192,6 +196,7 @@
     <EmbeddedResource Include="Migrations\202308282126053_changehall and add booking to model.resx">
       <DependentUpon>202308282126053_changehall and add booking to model.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308282129313_changehall and add booking to model.cs.resx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
