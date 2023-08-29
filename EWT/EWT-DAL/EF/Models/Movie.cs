@@ -29,5 +29,10 @@ namespace EWT_DAL.EF.Models
 
         [StringLength(255)]
         public string Poster { get; set; }
+
+        public virtual ICollection<Ticket> Ticket { get; set; }
+        public Movie() {
+            Ticket = new List<Ticket>();
+        }
     }
 }

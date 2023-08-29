@@ -1,7 +1,19 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Movies";
 }
-
-<h2>Movies</h2>
-
+<div ng-controller="MovieController">
+    <h2 class="text-center">Explore your favorite movies</h2>
+    <br />
+    <div class="row">
+        <div class="col-md-4 mb-4" ng-repeat="movie in movies">
+            <div class="card">
+                <img class="card-img-top" ng-src="{{ movie.Poster }}" alt="{{ movie.Title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.Title }}</h5>
+                    <p class="card-text">{{ movie.Description }}</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,13 @@
-﻿<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="aspnetTitle">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+﻿<div ng-controller="HomeController">
+<header>
+    <h1 class="text-center">{{ welcomeMessage }}</h1>
+</header>
+<main>
+    <br />
+    <img class="img-fluid" src="~/Content/Images/movie_roll.png" />
+    <br />
+    <h2 >Discover the Latest Movies</h2>
+    <p>Book your tickets online and enjoy a seamless movie experience.</p>
+    <a href="/Home/movies" class="btn btn-primary">Explore Movies</a>
 </main>
+</div>

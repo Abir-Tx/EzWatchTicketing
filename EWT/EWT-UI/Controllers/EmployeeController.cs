@@ -101,8 +101,7 @@ namespace EWT_UI.Controllers
             }
         }
 
-
-        // Employee Feature APIs
+        // -------------------------------------------- Employee Feature APIs ---------------------------------------------
 
         // Update the movie by movie name
         [HttpPost]
@@ -155,6 +154,83 @@ namespace EWT_UI.Controllers
         {
             if (MovieService.Delete(id)) return Request.CreateResponse(HttpStatusCode.OK, "The movie with ID: " + id + " has been deleted successfully");
             else return Request.CreateResponse(HttpStatusCode.BadRequest, "Cannot delete the requested movie");
+        }
+
+        // ------------------------- ticket management --------------------------------------
+
+        // Get Movie Tickets From Emp Endpoint
+        [HttpGet]
+        [Route("api/employee/movie/tickets")]
+        [EmployeeFilter]
+        public HttpResponseMessage GetMovieTickets() { 
+            try { return Request.CreateResponse(HttpStatusCode.OK, MovieService.GetMovieTickets()); }
+            catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
+
+        // Delete a movie ticket by ID
+        [HttpDelete]
+        [Route("api/employee/movie/tickets/delete/{id}")]
+        [EmployeeFilter]
+        public HttpResponseMessage DeleteTicketsById(int id)
+        {
+            if (TicketService.Delete(id)) return Request.CreateResponse(HttpStatusCode.OK, "The ticket with ID: " + id + " has been deleted successfully");
+            else return Request.CreateResponse(HttpStatusCode.BadRequest, "Can not delete the requested movie ticket");
+        }
+
+        // Update a ticket
+        [HttpPost]
+        [Route("api/employee/movie/tickets/update")]
+        [EmployeeFilter]
+        public HttpResponseMessage UpdateMovieTickets(TicketDTO ticket)
+        {
+            try
+            {
+                bool updateSuccessful = TicketService.Update(ticket);
+
+                if (updateSuccessful)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "Movie Ticket updated successfully");
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Movie Ticket not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+        // ------------------------------------------------------------- General User Management ------------------------------------------------
+
+
+        // Get all user list
+        [HttpGet]
+        [Route("api/employee/user/userlist")]
+        [EmployeeFilter]
+        public HttpResponseMessage GetAllUserList()
+        {
+            try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Get()); }
+            catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
+
+        // Get specific user using ID
+        [HttpGet]
+        [Route("api/employee/user/{id}")]
+        [EmployeeFilter]
+        public HttpResponseMessage GetSingleUser(int id)
+        {
+            try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Get(id)); }
+            catch (Exception ex) { return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
+        }
+
+        [HttpDelete]
+        [Route("api/employee/user/delete/{id}")]
+        [EmployeeFilter]
+        public HttpResponseMessage DeleteUser(int id) { 
+            try { return Request.CreateResponse(HttpStatusCode.OK, UserService.Delete(id)); }
+            catch (Exception ex){ return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message); }
         }
     }
 }
