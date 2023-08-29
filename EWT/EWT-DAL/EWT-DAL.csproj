@@ -112,13 +112,9 @@
     <Compile Include="Migrations\202308282133106_addbooking.designer.cs">
       <DependentUpon>202308282133106_addbooking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202308282245101_foodandorder.cs" />
-    <Compile Include="Migrations\202308282245101_foodandorder.designer.cs">
-      <DependentUpon>202308282245101_foodandorder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202308290436324_lastchanges.cs" />
-    <Compile Include="Migrations\202308290436324_lastchanges.designer.cs">
-      <DependentUpon>202308290436324_lastchanges.cs</DependentUpon>
+    <Compile Include="Migrations\202308290447584_lastchanges.cs" />
+    <Compile Include="Migrations\202308290447584_lastchanges.designer.cs">
+      <DependentUpon>202308290447584_lastchanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -206,11 +202,8 @@
     <EmbeddedResource Include="Migrations\202308282133106_addbooking.resx">
       <DependentUpon>202308282133106_addbooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308282245101_foodandorder.resx">
-      <DependentUpon>202308282245101_foodandorder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308290436324_lastchanges.resx">
-      <DependentUpon>202308290436324_lastchanges.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202308290447584_lastchanges.resx">
+      <DependentUpon>202308290447584_lastchanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

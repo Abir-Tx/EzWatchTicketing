@@ -13,7 +13,7 @@ namespace EWT_DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202308290436324_lastchanges"; }
+            get { return "202308290447584_lastchanges"; }
         }
         
         string IMigrationMetadata.Source
