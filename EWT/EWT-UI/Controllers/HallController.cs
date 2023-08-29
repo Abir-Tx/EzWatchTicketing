@@ -60,7 +60,7 @@ namespace EWT_UI.Controllers
             try
             {
                 HallService.Update(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "Ticket Updated" });
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = " Updated" });
             }
             catch (Exception ex)
             {

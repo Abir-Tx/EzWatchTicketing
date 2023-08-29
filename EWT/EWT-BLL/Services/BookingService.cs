@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.Cryptography.X509Certificates;
 
 namespace EWT_BLL.Services
 {
@@ -16,69 +15,49 @@ namespace EWT_BLL.Services
         public static List<BookingDTO> Get()
         {
             var data = DataAccesser.BookingDataAccess().Get();
-            var config = new MapperConfiguration(cfg =>
-            cfg.CreateMap<Booking , BookingDTO>());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Booking, BookingDTO>());
             var mapper = new Mapper(config);
             var convertData = mapper.Map<List<BookingDTO>>(data);
             return convertData;
-
         }
-        //byid
+
         public static BookingDTO Get(int id)
         {
             var data = DataAccesser.BookingDataAccess().Get(id);
-            var config = new MapperConfiguration(cfg =>
-            cfg.CreateMap<Booking, BookingDTO>());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Booking, BookingDTO>());
             var mapper = new Mapper(config);
             var convertData = mapper.Map<BookingDTO>(data);
             return convertData;
         }
-        //getbyuserid
-        //createbooking
 
-        public static bool create(BookingDTO booking)
+        public static bool Create(BookingDTO booking)
         {
             if (booking == null)
                 return false;
-            else
-            {
 
-                var config = new MapperConfiguration(cfg =>
-                cfg.CreateMap<BookingDTO, Booking>());
-                var mapper = new Mapper(config);
-                var convertData = mapper.Map<Booking>(booking);
-                return DataAccesser.BookingDataAccess().Create(convertData);
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<BookingDTO, Booking>());
+            var mapper = new Mapper(config);
+            var convertData = mapper.Map<Booking>(booking);
 
-            }
-
-
+            return DataAccesser.BookingDataAccess().Create(convertData);
         }
-        //update
+
+
         public static bool Update(BookingDTO booking)
         {
             if (booking == null)
                 return false;
-            else
-            {
 
-                var config = new MapperConfiguration(cfg =>
-                cfg.CreateMap<BookingDTO, Booking>());
-                var mapper = new Mapper(config);
-                var convertData = mapper.Map<Booking>(booking);
-                return DataAccesser.BookingDataAccess().Update(convertData);
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<BookingDTO, Booking>());
+            var mapper = new Mapper(config);
+            var convertData = mapper.Map<Booking>(booking);
 
-            }
-
+            return DataAccesser.BookingDataAccess().Update(convertData);
         }
-        //delete
+
         public static bool Delete(int id)
         {
-            return DataAccesser.BookingDataAccess().Delete(id);   
+            return DataAccesser.BookingDataAccess().Delete(id);
         }
-
-
     }
-
-
-
 }

@@ -40,6 +40,10 @@ namespace EWT_DAL
         {
             return new BookingRepo();
         }
+        public static IRepo<Seat, int, bool> SeatDataAccess()
+        {
+            return new SeatRepo();
+        }
 
 
 

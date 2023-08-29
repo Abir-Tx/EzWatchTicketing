@@ -2,6 +2,7 @@
 using EWT_DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,22 +19,33 @@ namespace EWT_DAL.Repos
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var payment = db.Payments.Find(id);
+            if (payment == null)
+                return false;
+
+            db.Payments.Remove(payment);
+            return db.SaveChanges() > 0;
         }
 
         public List<Payment> Get()
         {
-            return db.Payments.ToList();    
+            return db.Payments.ToList();
         }
 
         public Payment Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Payments.Find(id);
         }
 
         public bool Update(Payment obj)
         {
-            throw new NotImplementedException();
+            var paymentToUpdate = db.Payments.Find(obj.Id);
+            if (paymentToUpdate == null)
+                return false;
+
+
+            db.Payments.AddOrUpdate(paymentToUpdate);
+            return db.SaveChanges() > 0;
         }
     }
 }

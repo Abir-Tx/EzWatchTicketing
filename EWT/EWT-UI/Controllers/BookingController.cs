@@ -7,7 +7,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-
 namespace EWT_UI.Controllers
 {
     public class BookingController : ApiController
@@ -19,14 +18,12 @@ namespace EWT_UI.Controllers
             try
             {
                 var data = BookingService.Get();
-                return Request.CreateResponse(HttpStatusCode.OK,data);
-
+                return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
-
         }
 
         [HttpPost]
@@ -35,20 +32,20 @@ namespace EWT_UI.Controllers
         {
             try
             {
-                BookingService.create(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new {msg="Created"});
 
+                obj.Status = 0;
+
+                BookingService.Create(obj);
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "Created" });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return Request.CreateErrorResponse (HttpStatusCode.InternalServerError, ex.Message);
-
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 
         [HttpGet]
         [Route("api/booking/get/{id}")]
-        
         public HttpResponseMessage Get(int id)
         {
             try
@@ -69,7 +66,7 @@ namespace EWT_UI.Controllers
             try
             {
                 BookingService.Update(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "updated" });
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "Updated" });
             }
             catch (Exception ex)
             {
@@ -79,12 +76,12 @@ namespace EWT_UI.Controllers
 
         [HttpDelete]
         [Route("api/booking/delete/{id}")]
-        public HttpResponseMessage Delete(int obj)
+        public HttpResponseMessage Delete(int id)
         {
             try
             {
-                BookingService.Delete(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "deleted" });
+                BookingService.Delete(id);
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "Deleted" });
             }
             catch (Exception ex)
             {

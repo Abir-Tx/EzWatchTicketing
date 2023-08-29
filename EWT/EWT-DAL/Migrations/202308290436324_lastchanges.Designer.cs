@@ -7,13 +7,13 @@ namespace EWT_DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class foodandorder1 : IMigrationMetadata
+    public sealed partial class lastchanges : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(foodandorder1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(lastchanges));
         
         string IMigrationMetadata.Id
         {
-            get { return "202308290234301_foodandorder1"; }
+            get { return "202308290436324_lastchanges"; }
         }
         
         string IMigrationMetadata.Source

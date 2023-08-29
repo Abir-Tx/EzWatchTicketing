@@ -21,9 +21,9 @@ namespace EWT_DAL.EF.Models
             Seats = new List<Seat>();    
         }
         //add movieid
-        //[ForeignKey("Movie")]
-        //public int MovieId { get; set; }
-        //public virtual Movie Movie { get; set; }
+        [ForeignKey("Movie")]
+        public int MovieId { get; set; }
+        public virtual Movie Movie { get; set; }
         
     }
 }

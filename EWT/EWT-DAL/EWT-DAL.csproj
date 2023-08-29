@@ -116,9 +116,9 @@
     <Compile Include="Migrations\202308282245101_foodandorder.designer.cs">
       <DependentUpon>202308282245101_foodandorder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202308290234301_foodandorder1.cs" />
-    <Compile Include="Migrations\202308290234301_foodandorder1.designer.cs">
-      <DependentUpon>202308290234301_foodandorder1.cs</DependentUpon>
+    <Compile Include="Migrations\202308290436324_lastchanges.cs" />
+    <Compile Include="Migrations\202308290436324_lastchanges.designer.cs">
+      <DependentUpon>202308290436324_lastchanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,6 +151,7 @@
     <Compile Include="Repos\AdminRepo.cs" />
     <Compile Include="Repos\EmployeeRepo.cs" />
     <Compile Include="Repos\MovieRepo.cs" />
+    <Compile Include="Repos\SeatRepo.cs" />
     <Compile Include="Repos\TokenRepo.cs" />
     <Compile Include="Repos\UserRepo.cs" />
     <Compile Include="Repos\TicketRepo.cs" />
@@ -208,8 +209,8 @@
     <EmbeddedResource Include="Migrations\202308282245101_foodandorder.resx">
       <DependentUpon>202308282245101_foodandorder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202308290234301_foodandorder1.resx">
-      <DependentUpon>202308290234301_foodandorder1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202308290436324_lastchanges.resx">
+      <DependentUpon>202308290436324_lastchanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
