@@ -18,5 +18,6 @@ namespace EWT_DAL.EF
         public DbSet<Token> Tokens { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Booking> Bookings { get; set; }    
+        public DbSet<Food> Foods { get; set; }  
     }
 }
