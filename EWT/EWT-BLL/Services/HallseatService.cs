@@ -8,5 +8,6 @@ namespace EWT_BLL.Services
 {
     public class HallseatService
     {
+
     }
 }
