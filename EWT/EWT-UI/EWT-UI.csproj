@@ -143,6 +143,7 @@
     <Compile Include="AuthFilters\LoginFilter.cs" />
     <Compile Include="AuthFilters\UserFilter.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\FoodOrderController.cs" />
     <Compile Include="Controllers\HallController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

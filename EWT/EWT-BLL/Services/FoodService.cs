@@ -32,7 +32,7 @@ namespace EWT_BLL.Services
             return convertData;
         }
         //create
-        public static bool create(FoodDTO food)
+        public static bool Create(FoodDTO food)
         {
             if (food==null)
                 return false;
@@ -52,7 +52,7 @@ namespace EWT_BLL.Services
             return DataAccesser.FoodDataAccess().Delete(id);    
         }
         //update
-        public static bool update(FoodDTO food)
+        public static bool Update(FoodDTO food)
         {
             if (food == null)
                 return false;

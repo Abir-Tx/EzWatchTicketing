@@ -54,7 +54,7 @@ namespace EWT_BLL.Services
 
         }
         //update
-        public static bool update(BookingDTO booking)
+        public static bool Update(BookingDTO booking)
         {
             if (booking == null)
                 return false;

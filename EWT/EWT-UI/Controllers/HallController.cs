@@ -75,7 +75,7 @@ namespace EWT_UI.Controllers
             try
             {
                 HallService.Delete(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "Ticket Deleted" });
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "hall Deleted" });
             }
             catch (Exception ex)
             {

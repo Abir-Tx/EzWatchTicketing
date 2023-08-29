@@ -36,7 +36,7 @@ namespace EWT_UI.Controllers
             try
             {
                 BookingService.create(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new {msg="Ticket Created"});
+                return Request.CreateResponse(HttpStatusCode.OK, new {msg="Created"});
 
             }
             catch(Exception ex)
@@ -84,7 +84,7 @@ namespace EWT_UI.Controllers
             try
             {
                 BookingService.Delete(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "booking cancel" });
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "deleted" });
             }
             catch (Exception ex)
             {

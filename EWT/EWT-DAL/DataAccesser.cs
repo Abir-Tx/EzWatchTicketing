@@ -32,6 +32,10 @@ namespace EWT_DAL
         {
             return new FoodRepo();
         }
+        public static IRepo<OrderFood, int, bool> OrderFoodDataAccess()
+        {
+            return new OrderFoodRepo();
+        }
         public static IRepo<Booking, int, bool> BookingDataAccess()
         {
             return new BookingRepo();

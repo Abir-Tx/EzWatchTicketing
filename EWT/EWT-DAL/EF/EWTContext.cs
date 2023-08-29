@@ -19,5 +19,6 @@ namespace EWT_DAL.EF
         public DbSet<Role> Roles { get; set; }
         public DbSet<Booking> Bookings { get; set; }    
         public DbSet<Food> Foods { get; set; }  
+        public DbSet<OrderFood> OrderFoods { get; set; }
     }
 }
