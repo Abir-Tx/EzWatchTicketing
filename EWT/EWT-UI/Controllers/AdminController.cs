@@ -116,5 +116,172 @@ namespace EWT_UI.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+
+        [HttpPost]
+        [Route("api/admin/movie/update")]
+        [AdminFilter]
+        public HttpResponseMessage UpdateMovie(MovieDTO movie)
+        {
+            try
+            {
+                bool updateSuccessful = MovieService.Update(movie);
+
+                if (updateSuccessful)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "Movie updated successfully");
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Movie not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("api/admin/ticket/update")]
+        [AdminFilter]
+        public HttpResponseMessage TicketUpdate(TicketDTO tic)
+        {
+            try
+            {
+                bool updateSuccessful = TicketService.Update(tic);
+
+                if (updateSuccessful)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "Movie updated successfully");
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Movie not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("api/admin/ticket/all")]
+        [AdminFilter]
+        public HttpResponseMessage TicketAll()
+        {
+            try
+            {
+                var data = TicketService.Get();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+        [HttpGet]
+        [AdminFilter]
+        [Route("api/admin/ticket/get/{id}")]
+        public HttpResponseMessage GetTicket(int id)
+        {
+            try
+            {
+                var data = TicketService.Get(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+        [HttpPost]
+        [AdminFilter]
+        [Route("api/admin/ticket/update")]
+        public HttpResponseMessage UpdateTicket(TicketDTO obj)
+        {
+            try
+            {
+                TicketService.Update(obj);
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "Ticket Updated" });
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPost]
+        [AdminFilter]
+        [Route("api/admin/ticket/delete")]
+        public HttpResponseMessage DeleteTicket(int obj)
+        {
+            try
+            {
+                TicketService.Delete(obj);
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "Ticket Deleted" });
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [AdminFilter]
+        [Route("api/admin/hall/all")]
+        public HttpResponseMessage AllHall()
+        {
+            try
+            {
+                var data = HallService.Get();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+        [HttpGet]
+        [AdminFilter]
+        [Route("api/admin/user/all")]
+        public HttpResponseMessage AllUser()
+        {
+            try
+            {
+                var data = UserService.Get();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+        [HttpGet]
+        [AdminFilter]
+        [Route("api/admin/user/get/{id}")]
+        public HttpResponseMessage GetUser(int id)
+        {
+            try
+            {
+                var data = UserService.Get(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+
+        }
+        [HttpDelete]
+        [AdminFilter]
+        [Route("api/admion/user/delete/{id}")]
+        public HttpResponseMessage DeleteUser(int id)
+        {
+            if (UserService.Delete(id))
+                return Request.CreateResponse(HttpStatusCode.OK, "The user with id: " + id + " has been deleted successfully");
+            else
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "cannot delete the requested user");
+        }
     }
 }
