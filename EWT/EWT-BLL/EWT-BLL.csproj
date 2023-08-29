@@ -61,6 +61,7 @@
     <Compile Include="Services\FoodService.cs" />
     <Compile Include="Services\HallseatService.cs" />
     <Compile Include="Services\HallService.cs" />
+    <Compile Include="Services\OrderFoodService.cs" />
     <Compile Include="Services\PaymentServices.cs" />
     <Compile Include="DTOs\AdminDTO.cs" />
     <Compile Include="DTOs\EmployeeDTO.cs" />

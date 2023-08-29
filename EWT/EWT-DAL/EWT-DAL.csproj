@@ -116,11 +116,16 @@
     <Compile Include="Migrations\202308282245101_foodandorder.designer.cs">
       <DependentUpon>202308282245101_foodandorder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308290234301_foodandorder1.cs" />
+    <Compile Include="Migrations\202308290234301_foodandorder1.designer.cs">
+      <DependentUpon>202308290234301_foodandorder1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BookingRepo.cs" />
     <Compile Include="Repos\FoodRepo.cs" />
     <Compile Include="Repos\HallRepo.cs" />
+    <Compile Include="Repos\OrderFoodRepo.cs" />
     <Compile Include="Repos\PaymentRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Migrations\202308120806219_InitEmployee.cs" />
@@ -202,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308282245101_foodandorder.resx">
       <DependentUpon>202308282245101_foodandorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308290234301_foodandorder1.resx">
+      <DependentUpon>202308290234301_foodandorder1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

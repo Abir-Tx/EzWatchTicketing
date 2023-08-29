@@ -23,7 +23,8 @@ namespace EWT_DAL.EF.Models
 
         public virtual Seat Seat { get; set; }  
         //food,payment--
-
+        //public virtual OrderFood OrderFood { get; set; }
+        //public virtual Payment payment { get; set; }    
 
     }
 }
