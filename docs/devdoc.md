@@ -69,7 +69,7 @@ This should avoid the error.
 
 Now test the project first before adding Developement. Everyting should work fine now. Test the APIs endpoints uisng **Postman**
 
-## Got And Error ?
+## Got An Error ?
 
 ### Context Has Changed Error
 
