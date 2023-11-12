@@ -46,15 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\BookingDTO.cs" />
+    <Compile Include="DTOs\FoodDTO.cs" />
     <Compile Include="DTOs\HallDTO.cs" />
     <Compile Include="DTOs\HallSeatDTO.cs" />
+    <Compile Include="DTOs\OrderFoodDTO.cs" />
     <Compile Include="DTOs\PaymentDTO.cs" />
     <Compile Include="DTOs\PayMethodDTO.cs" />
     <Compile Include="DTOs\SeatDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\BookingService.cs" />
+    <Compile Include="Services\FoodService.cs" />
+    <Compile Include="Services\HallseatService.cs" />
     <Compile Include="Services\HallService.cs" />
+    <Compile Include="Services\OrderFoodService.cs" />
     <Compile Include="Services\PaymentServices.cs" />
     <Compile Include="DTOs\AdminDTO.cs" />
     <Compile Include="DTOs\EmployeeDTO.cs" />
