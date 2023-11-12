@@ -9,16 +9,16 @@ using System.Web.Http;
 
 namespace EWT_UI.Controllers
 {
-    public class HallController : ApiController
+    public class FoodOrderController : ApiController
     {
         [HttpPost]
-        [Route("api/hall/create")]
-        public HttpResponseMessage Create(HallDTO obj)
+        [Route("api/orderfood/create")]
+        public HttpResponseMessage Create(OrderFoodDTO obj)
         {
             try
             {
-                HallService.Create(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "New Cinema Hall Created" });
+                OrderFoodService.Create(obj);
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "order Created" });
             }
             catch (Exception ex)
             {
@@ -26,26 +26,26 @@ namespace EWT_UI.Controllers
             }
         }
         [HttpGet]
-        [Route("api/hall/all")]
+        [Route("api/orderfood/all")]
         public HttpResponseMessage All()
         {
             try
             {
-                var data = HallService.Get();
-                return Request.CreateResponse(HttpStatusCode.OK,data);
+                var data = OrderFoodService.Get();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
         [HttpGet]
-        [Route("api/hall/get/{id}")]
+        [Route("api/order/get/{id}")]
         public HttpResponseMessage Get(int id)
         {
             try
             {
-                var data = HallService.Get(id);
+                var data = OrderFoodService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -54,12 +54,12 @@ namespace EWT_UI.Controllers
             }
         }
         [HttpPost]
-        [Route("api/hall/update")]
-        public HttpResponseMessage Update(HallDTO obj)
+        [Route("api/orderfood/update")]
+        public HttpResponseMessage Update(OrderFoodDTO obj)
         {
             try
             {
-                HallService.Update(obj);
+                OrderFoodService.Update(obj);
                 return Request.CreateResponse(HttpStatusCode.OK, new { msg = " Updated" });
             }
             catch (Exception ex)
@@ -69,34 +69,19 @@ namespace EWT_UI.Controllers
         }
 
         [HttpPost]
-        [Route("api/hall/delete")]
+        [Route("api/orderfood/delete")]
         public HttpResponseMessage Delete(int obj)
         {
             try
             {
-                HallService.Delete(obj);
-                return Request.CreateResponse(HttpStatusCode.OK, new { msg = "hall Deleted" });
+                OrderFoodService.Delete(obj);
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg = " Deleted" });
             }
             catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
-        [HttpGet]
-        [Route("api/hall/{id}/seat")]
-        public HttpResponseMessage GetSeatbyHall(int id)
-        {
-            try
-            {
-                var data = HallService.Get(id);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
-
-
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
-            }
-        }
+        
     }
 }

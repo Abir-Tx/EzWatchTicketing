@@ -12,20 +12,16 @@ namespace EWT_BLL.Services
 {
     public class PaymentServices
     {
-        //add payment for card 
-        //card is now temporay payment.cs 
-
-
-        //add card details
-        public static bool Create(PaymentDTO c)
+        public static bool Create(PaymentDTO paymentDTO)
         {
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<PaymentDTO, Payment>();
             });
             var mapper = new Mapper(config);
-            var converted = mapper.Map<Payment>(c);
-            return DataAccesser.PaymentDataAccess().Create(converted);
+            var paymentEntity = mapper.Map<Payment>(paymentDTO);
+
+            return DataAccesser.PaymentDataAccess().Create(paymentEntity);
         }
 
         public static List<PaymentDTO> Get()
@@ -36,10 +32,37 @@ namespace EWT_BLL.Services
                 cfg.CreateMap<Payment, PaymentDTO>();
             });
             var mapper = new Mapper(config);
-            var convertData = mapper.Map<List<PaymentDTO>>(data);
-            return convertData;
-
+            var convertedData = mapper.Map<List<PaymentDTO>>(data);
+            return convertedData;
         }
 
+        public static PaymentDTO Get(int id)
+        {
+            var data = DataAccesser.PaymentDataAccess().Get(id);
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Payment, PaymentDTO>();
+            });
+            var mapper = new Mapper(config);
+            var convertedData = mapper.Map<PaymentDTO>(data);
+            return convertedData;
+        }
+
+        public static bool Update(PaymentDTO paymentDTO)
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<PaymentDTO, Payment>();
+            });
+            var mapper = new Mapper(config);
+            var paymentEntity = mapper.Map<Payment>(paymentDTO);
+
+            return DataAccesser.PaymentDataAccess().Update(paymentEntity);
+        }
+
+        public static bool Delete(int id)
+        {
+            return DataAccesser.PaymentDataAccess().Delete(id);
+        }
     }
 }

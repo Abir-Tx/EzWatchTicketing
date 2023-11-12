@@ -56,7 +56,10 @@
   <ItemGroup>
     <Compile Include="DataAccesser.cs" />
     <Compile Include="EF\EWTContext.cs" />
+    <Compile Include="EF\Models\Booking.cs" />
+    <Compile Include="EF\Models\Food.cs" />
     <Compile Include="EF\Models\Hall.cs" />
+    <Compile Include="EF\Models\OrderFood.cs" />
     <Compile Include="EF\Models\Payment.cs" />
     <Compile Include="EF\Models\PayMethod.cs" />
     <Compile Include="EF\Models\Role.cs" />
@@ -109,9 +112,20 @@
     <Compile Include="Migrations\202308280725470_Polish.designer.cs">
       <DependentUpon>202308280725470_Polish.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308282133106_addbooking.cs" />
+    <Compile Include="Migrations\202308282133106_addbooking.designer.cs">
+      <DependentUpon>202308282133106_addbooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308290447584_lastchanges.cs" />
+    <Compile Include="Migrations\202308290447584_lastchanges.designer.cs">
+      <DependentUpon>202308290447584_lastchanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\BookingRepo.cs" />
+    <Compile Include="Repos\FoodRepo.cs" />
     <Compile Include="Repos\HallRepo.cs" />
+    <Compile Include="Repos\OrderFoodRepo.cs" />
     <Compile Include="Repos\PaymentRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Migrations\202308120806219_InitEmployee.cs" />
@@ -137,6 +151,7 @@
     <Compile Include="Repos\AdminRepo.cs" />
     <Compile Include="Repos\EmployeeRepo.cs" />
     <Compile Include="Repos\MovieRepo.cs" />
+    <Compile Include="Repos\SeatRepo.cs" />
     <Compile Include="Repos\TokenRepo.cs" />
     <Compile Include="Repos\UserRepo.cs" />
     <Compile Include="Repos\TicketRepo.cs" />
@@ -190,6 +205,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308280725470_Polish.resx">
       <DependentUpon>202308280725470_Polish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308282133106_addbooking.resx">
+      <DependentUpon>202308282133106_addbooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308290447584_lastchanges.resx">
+      <DependentUpon>202308290447584_lastchanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
