@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Employee Dashboard";
+}
+
+<!DOCTYPE html>
+<html ng-app="EmployeeApp">
+<head>
+    <title>Employee Data</title>
+</head>
+<body ng-controller="EmpDashboardController">
+    <div class="container">
+        <h2>Employee Data</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{ employee.Id }}</td>
+                    <td>{{ employee.Name }}</td>
+                    <td>{{ employee.Email }}</td>
+                    <td>{{ employee.Username }}</td>
+                    <td>{{ employee.Address }}</td>
+                    <td>{{ employee.Salary }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

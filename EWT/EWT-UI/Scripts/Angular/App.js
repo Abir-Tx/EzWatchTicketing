@@ -37,7 +37,7 @@ app.controller("LoginController", function ($scope, $http, $window) {
                 // Redirect to a new page if token in available
                 // Check if token is valid before redirection
                 if (isTokenValid(response.data.ExpiredAt)) {
-                    $window.location.href = "https://localhost:44365/Home/Movies";
+                    $window.location.href = "https://localhost:44365/EmpDashboard/Dashboard";
                 }
                 else {
                     console.log("Token Expired. Expired token: " + token)
@@ -49,6 +49,26 @@ app.controller("LoginController", function ($scope, $http, $window) {
                 console.error("Login failed:", error);
             });
     };
+
+    app.controller("EmpDashboardController", function ($scope, $http) {
+        const token = "e61f74eb-210a-43be-ac5c-6d0206a9acbc"; // Replace with your actual token
+        const apiUrl = "https://localhost:44365/api/employee/all";
+
+        const config = {
+            headers: {
+                "Authorization": token
+            }
+        };
+
+        $http.get(apiUrl, config)
+            .then(function (response) {
+                console.log("Executed");
+                $scope.employees = response.data;
+            })
+            .catch(function (error) {
+                console.error("Error fetching data:", error);
+            });
+    });
 
 
     function isTokenValid(expiredAt) {
