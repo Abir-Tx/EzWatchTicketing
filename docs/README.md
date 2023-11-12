@@ -8,6 +8,13 @@ The repo will basically hold the APIs for the website. The is for building the A
 
 View the frontend design live at [here](https://www.figma.com/community/file/1271040730437769653)
 
+## Implemented Fronted
+
+We were not able to implement the full frontend in short time actually. Though the backend API works flawlessly but frontend is something we have skipped actually. I have just setup a bare minimum fronted which looks like this:
+
+![Web capture_13-11-2023_1924_localhost](https://github.com/Abir-Tx/EzWatchTicketing/assets/28858998/dd5c6da8-5199-47b6-a7e0-bb773f27395a)
+
+
 ## Technical Details
 
 - DotNet Framework Version: 4.7.2
