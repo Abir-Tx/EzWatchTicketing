@@ -145,6 +145,7 @@
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\FoodOrderController.cs" />
+    <Compile Include="Controllers\EmpDashboardController.cs" />
     <Compile Include="Controllers\HallController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -208,6 +209,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Movies.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\EmpDashboard\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
